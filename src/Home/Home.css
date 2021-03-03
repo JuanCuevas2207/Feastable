@@ -1,0 +1,66 @@
+.CategoryBar{
+  background-color: #D97782;
+  font-weight: 400;
+}
+
+.name{
+  color: white;
+  background-size: cover;
+  min-height: 250px;
+  background-image: url("ensalada.jpg");
+  opacity: 0.5;
+}
+
+.layer{
+  background-color: black;
+  width: 100%;
+  height:  100%;
+}
+
+#active{
+  text-decoration: underline;
+  font-weight: 650;
+}
+
+ul{
+  margin: 0;
+  list-style:none;
+}
+
+li{
+  display: inline;
+  color: white;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+h1{
+  position: absolute;
+  top: 18%;
+  left: 22%;
+  color: white;
+  font-size: 120px;
+}
+
+@media screen and (max-width: 720px){
+  .CategoryBar{
+    font-size: 12px;
+  }
+
+  .name{
+    min-height: 150px;
+  }
+
+  .menuImg{
+    height: 27px; 
+  }
+
+  h1{
+    font-size: 50px;
+  }
+
+  li{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
