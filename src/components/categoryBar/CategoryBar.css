@@ -1,0 +1,32 @@
+.CategoryBar{
+  background-color: #D97782;
+  font-weight: 400;
+}
+
+#active{
+  text-decoration: underline;
+  font-weight: 650;
+}
+
+ul{
+  margin: 0;
+  list-style:none;
+}
+
+li{
+  display: inline;
+  color: white;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+@media screen and (max-width: 720px){
+  .CategoryBar{
+    font-size: 12px;
+  }
+
+  li{
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
