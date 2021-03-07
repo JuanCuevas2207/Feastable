@@ -1,6 +1,5 @@
-var CategoryBar = () =>{
-  return (
-    <div className="CategoryBar row py-3 justify-content-center">
+var CategoryBar = () =>(
+    <div className="CategoryBar row py-3  justify-content-center">
       <ul>
         <li><a>Desayunos</a></li>
         <li><a>Platos Fuertes</a></li>
@@ -13,6 +12,5 @@ var CategoryBar = () =>{
       </ul>
     </div>
   );
-}
 
 export default CategoryBar;

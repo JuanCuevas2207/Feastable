@@ -1,0 +1,32 @@
+.recipe{
+    border: 1px solid black;
+    width: 220px;
+    height: 200px;
+    display: inline-block;
+    background-color: white;
+}
+
+.time{
+    color: gray;
+    font-size: 15px;
+    text-align: center;
+}
+
+.rating{
+    color: rebeccapurple;
+    font-size: 20px;
+    text-align: center;
+}
+
+.recipeName{
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.recipes{
+    margin: 30px;
+    display: flex;
+    background-color: black;
+    justify-content: center;
+}
+
