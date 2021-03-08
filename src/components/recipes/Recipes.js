@@ -1,12 +1,10 @@
-var Recipe = (props) =>{
-  return (
-    <div className="recipe row py-3 justify-content-center">
-      <h6 className="time">{props.time} min</h6>
-      <h2 className="recipeName">{props.name}</h2>
-      <h6 className="rating">{props.rating} stars</h6>
-    </div>
-  );
-}
+var Recipe = (props) =>(
+  <div className="recipe row py-3">
+    <h6 className="time">{props.time} min</h6>
+    <h2 className="recipeName">{props.name}</h2>
+    <h6 className="rating">{props.rating} stars</h6>
+  </div>
+);
 
 const recipesData = [
 	{name:"Ensalada Marroqui", time:"25", rating:"3.5"},
@@ -20,7 +18,7 @@ const recipesData = [
 const recipes = recipesData.map(recipeData => <Recipe {...recipeData} />);
 
 var Recipes = () => ( 
-  <div className="recipes">
+  <div className="row recipies justify-content-center m-5">
     {recipes}
   </div>
 );

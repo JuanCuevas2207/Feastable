@@ -11,13 +11,13 @@
 ul{
   margin: 0;
   list-style:none;
+  display: flex;
+  justify-content: space-around;
 }
 
 li{
   display: inline;
   color: white;
-  padding-left: 60px;
-  padding-right: 60px;
 }
 
 li:hover{
@@ -31,9 +31,5 @@ li:hover{
   .CategoryBar{
     font-size: 12px;
   }
-
-  li{
-    padding-left: 5px;
-    padding-right: 5px;
-  }
 }
+

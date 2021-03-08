@@ -1,5 +1,5 @@
 var CategoryBar = () =>(
-    <div className="CategoryBar row py-3  justify-content-center">
+    <div className="CategoryBar py-3">
       <ul>
         <li><a>Desayunos</a></li>
         <li><a>Platos Fuertes</a></li>

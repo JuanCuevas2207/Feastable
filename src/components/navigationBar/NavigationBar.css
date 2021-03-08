@@ -1,4 +1,4 @@
-.row{
+.row {
   margin: 0;
 }
 
@@ -7,9 +7,7 @@
   color: white;
 }
 
-.buscador{
-  margin: 0px;
-  padding: 0px;
+.buscador {
   padding-left: 15px;
   background-color: white;
   color: gray;
@@ -19,5 +17,9 @@
 @media screen and (max-width: 720px){
   .buscador{
     font-size: 12px;
+  }
+  
+  .menuImg{
+    width: 25px;
   }
 }
