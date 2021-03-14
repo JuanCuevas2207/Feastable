@@ -1,15 +1,18 @@
-.CategoryBar{
+.categoryBar{
   background-color: #D97782;
   font-weight: 400;
+  padding-bottom: 12px;
+  padding-top: 12px;
 }
 
-#active{
+.activeCategory{
   text-decoration: underline;
   font-weight: 650;
 }
 
 ul{
   margin: 0;
+  padding: 0;
   list-style:none;
   display: flex;
   justify-content: space-around;
@@ -28,7 +31,7 @@ li:hover{
 }
 
 @media screen and (max-width: 720px){
-  .CategoryBar{
+  .categoryBar{
     font-size: 12px;
   }
 }

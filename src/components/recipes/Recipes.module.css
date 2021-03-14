@@ -1,0 +1,48 @@
+.recipe{
+    width: 220px;
+    height: 200px;
+    margin: 35px;
+    display: inline-block;
+    text-align: center;
+    background-image: url("salad.jpg");
+    box-shadow: 2px 2px 5px rgb(180, 180, 180);
+    background-size: cover;
+    position: relative;
+    color: transparent;
+}
+
+.recipe:before{
+    content: '';
+    background-color: white;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.recipe:hover:before{
+    opacity: 0.6;
+}
+
+.recipe:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.time{
+    position: relative;
+    font-size: 15px;
+}
+
+.rating{
+    position: relative;
+    font-size: 20px;
+}
+
+.recipeName{
+    position: relative;
+    text-transform: uppercase;
+}
+

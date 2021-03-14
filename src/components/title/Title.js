@@ -1,8 +1,8 @@
-var Title = (props) => (
-	<div className="Title">
-	    <div className="categoryName">
-			<h1>{props.text}</h1> 
-	    </div>
+import titleStyles from './Title.module.css';
+
+const Title = (props) => (
+	<div className={titleStyles.categoryName}>
+		<h1>{props.text}</h1> 
 	</div>
 );
 

@@ -1,0 +1,94 @@
+.header {
+  background-color: #0D4E70;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form{
+  width: 500px;
+}
+
+.buscador {
+  padding-left: 15px;
+  background-color: white;
+  color: gray;
+  box-shadow: 1px 1px 4px black;
+  width: 100%;
+  font-size: 15px;
+}
+
+.button{
+  width: 30%;
+  border: none;
+  background-color: #166c9b;
+  color: white;
+  font-size: 15px;
+}
+
+.buscador:focus {
+  border: none;
+  outline: none;
+}
+
+.button:focus{
+  border: none;
+  outline: none;
+}
+
+.button:hover{
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1000px){
+  .menuImg{
+    width: 28px;
+    height: 28px;
+  }
+
+  .form{
+    width: 400px;
+    font-size: 13px;
+  }
+
+  .button{
+    font-size: 13px;
+  }
+}
+
+@media screen and (max-width: 880px){
+  .menuImg{
+    width: 26px;
+    height: 26px;
+  }
+
+  .form{
+    width: 280px;
+    font-size: 11px;
+  }
+
+  .button{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 650px){
+  .buscador{
+    font-size: 12px;
+  }
+  
+  .menuImg{
+    width: 25px;
+    height: 25px;
+  }
+
+  .form{
+    width: 220px;
+    font-size: 10px;
+  }
+
+  .button{
+    font-size: 10px;
+  }
+}
