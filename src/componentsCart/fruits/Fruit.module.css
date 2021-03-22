@@ -1,0 +1,47 @@
+.fruit{
+    display: inline-block;
+    width: 140px;
+    height: 170px;
+    position: relative;
+
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 3px #ccc;
+    margin: 20px;
+    text-align: center;
+    padding-top: 10px;
+    }
+
+.fruit:hover{
+    cursor: pointer;
+}
+
+.fruit:focus{
+    animation: addToCart 2000ms forwards;
+}
+
+.imageContainer{
+    display: flex;
+    height: 55%;
+    width: 85%;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 5px rgb(66, 66, 66);
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.image{
+    height: 90%;
+}
+
+.name{
+    display: block;
+    font-size: 25px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+@keyframes addToCart{
+    0%{top:0; left: 0}
+    100%{top: 600px;}
+}

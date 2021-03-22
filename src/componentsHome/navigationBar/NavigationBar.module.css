@@ -13,32 +13,39 @@
 .buscador {
   padding-left: 15px;
   background-color: white;
-  color: gray;
-  box-shadow: 1px 1px 4px black;
+  color: green;
   width: 100%;
   font-size: 15px;
+  outline: none;
+  border: 2px solid black;
+  border-right: none;
 }
 
 .button{
   width: 30%;
-  border: none;
   background-color: #166c9b;
   color: white;
   font-size: 15px;
+  border: 2px solid black;
+  border-left: none;
 }
 
 .buscador:focus {
-  border: none;
-  outline: none;
+  border: 2px solid black;
+  border-right: none;
 }
 
 .button:focus{
-  border: none;
-  outline: none;
+  border: 2px solid black;
+  border-left: none;
 }
 
 .button:hover{
     font-weight: 700;
+}
+
+a:hover{
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1000px){

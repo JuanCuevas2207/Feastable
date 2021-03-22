@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import NavBarStyles from './NavigationBar.module.css';
-import 'C:/Users/Juan Ma/Documents/Trabajos U Sabana/10mo semestre/Desarrollo con React JS/Feastable/node_modules/bootstrap/dist/css/bootstrap.css';
+import "C:/Program Projects/Visual Studio Code/React/Feastable/node_modules/bootstrap/dist/css/bootstrap.css"
+import { withRouter } from 'react-router-dom'
 
-const NavigationBar = () =>{
+const NavigationBar = (props) =>{
   const[input, setInput] = useState("");
 
   const onSubmit = form => {
@@ -40,7 +41,7 @@ const NavigationBar = () =>{
         <div className={'float-right'}>
           <a><img className={['mx-md-2 mx-1', NavBarStyles.menuImg].join(" ")} src="assets/add.png" alt="Add icon" height="33px"></img></a>
           <a><img className={['mx-md-2 mx-1', NavBarStyles.menuImg].join(" ")} src="assets/save.png" alt="Save icon" height="30px"></img></a>
-          <a><img className={['mx-md-2 mx-1', NavBarStyles.menuImg].join(" ")} src="assets/shopping-cart.png" alt="Shopping icon" height="30px"></img></a>
+          <a onClick={()=>props.history.push("/")}><img className={['mx-md-2 mx-1', NavBarStyles.menuImg].join(" ")} src="assets/shopping-cart.png" alt="Shopping icon" height="30px"></img></a>
           <a><img className={['mx-md-2 mx-1 rounded-circle', NavBarStyles.menuImg].join(" ")} src="assets/profile-pic.jpg" alt="Picture icon" height="30px" width="30px"></img></a>
         </div>
       </div>   
@@ -48,4 +49,4 @@ const NavigationBar = () =>{
   )
 };
 
-export default NavigationBar;
+export default withRouter(NavigationBar);
