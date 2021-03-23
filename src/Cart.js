@@ -15,8 +15,6 @@ render(){
                                                 <>
                                                         <NavigationBar></NavigationBar>
                                                         <Cards></Cards>
-
-                                                        <button><Link to="/home">IR AL HOME</Link></button>
                                                 </>
                                         )}/>
 

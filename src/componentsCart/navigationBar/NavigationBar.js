@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import NavStyles from './NavigationBar.module.css';
+import {withRouter} from 'react-router-dom'
 
-const NavigationBar = () =>{
+const NavigationBar = (props) =>{
 
     const[input, setInput] = useState("");
   
@@ -40,10 +41,10 @@ const NavigationBar = () =>{
                     </form>
                 </div>
 
-                <div className={NavStyles.espacio}></div>
+                <img className={NavStyles.logo} src="assets/home.png" onClick = {()=>props.history.push("/home")} alt="Home"></img>
             </div>
         </div>
     );
 };
 
-export default NavigationBar;
+export default withRouter(NavigationBar);

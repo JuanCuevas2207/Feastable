@@ -16,6 +16,10 @@
   .logo{
     height:35px;
   }
+
+  .logo:hover{
+    cursor: pointer;  
+}
   
   .form{
     border: 2px solid black;
