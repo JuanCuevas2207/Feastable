@@ -1,4 +1,4 @@
-import Fruits from "./componentsCart/fruits/Fruits";
+import Cards from "./componentsCart/cards/Cards";
 import NavigationBar from "./componentsCart/navigationBar/NavigationBar";
 import { BrowserRouter } from 'react-router-dom';
 import { Route, Link } from 'react-router-dom';
@@ -14,7 +14,7 @@ render(){
                                         <Route path = "/" exact render = {()=>(
                                                 <>
                                                         <NavigationBar></NavigationBar>
-                                                        <Fruits></Fruits>
+                                                        <Cards></Cards>
 
                                                         <button><Link to="/home">IR AL HOME</Link></button>
                                                 </>
