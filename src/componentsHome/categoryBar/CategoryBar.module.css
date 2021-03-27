@@ -6,8 +6,7 @@
 }
 
 .activeCategory{
-  text-decoration: underline;
-  font-weight: 650;
+  font-weight: 700;
 }
 
 ul{
@@ -18,17 +17,17 @@ ul{
   justify-content: space-around;
 }
 
-li{
-  display: inline;
+a{
   color: white;
 }
 
-li:hover{
+a:hover{
   color: white;
-  font-weight: 700;
-  text-decoration: underline;
   cursor: pointer;
+  font-weight: 650;
+  text-decoration: none;
 }
+
 
 @media screen and (max-width: 720px){
   .categoryBar{

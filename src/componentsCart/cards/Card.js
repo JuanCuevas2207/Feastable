@@ -4,9 +4,7 @@ const Card = (props) =>{
 
     const addCard = e=>{
         const id= e.target.id;
-        const newCards = [id, ...props.cardList]
-        props.setCardList(newCards);
-        console.log(id)
+        props.setCardList(id);
     }
 
     return(

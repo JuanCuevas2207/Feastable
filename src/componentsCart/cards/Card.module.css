@@ -48,6 +48,21 @@
     color: black;
 }
 
+.cartButton{
+    width: 90%;
+
+    margin: 50px;
+    padding: 7px;
+
+    background-color: #0D4E70;
+    color: white;
+}
+
+.cartButton:hover{
+    cursor: pointer;
+    font-weight: 700;
+}
+
 @keyframes addToCart{
     0%{top:0; left: 0}
     100%{top: 600px;}

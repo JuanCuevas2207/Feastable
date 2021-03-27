@@ -23,7 +23,7 @@ const NavigationBar = (props) =>{
             <div className={NavStyles.header}>
               
                 <div>
-                    <img src="assets/logo.png" alt="Logo" className={NavStyles.logo}></img> 
+                    <img src="assets/icons/logo.png" alt="Logo" className={NavStyles.logo}></img> 
                 </div>
               
          
@@ -41,7 +41,7 @@ const NavigationBar = (props) =>{
                     </form>
                 </div>
 
-                <img className={NavStyles.logo} src="assets/home.png" onClick = {()=>props.history.push("/home")} alt="Home"></img>
+                <img className={NavStyles.logo} src="assets/icons/home.png" onClick = {()=>props.history.push("/desayunos")} alt="Home"></img>
             </div>
         </div>
     );

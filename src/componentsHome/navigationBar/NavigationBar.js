@@ -22,7 +22,7 @@ const NavigationBar = (props) =>{
     <div className={[NavBarStyles.header, 'py-2 align-items-center'].join(" ")}>  
 
       <div className={'px-md-5 px-sm-4 px-3'}>
-        <img src="assets/logo.png" height="35px" alt="Logo" className ={'float-left'}></img> 
+        <img src="assets/icons/logo.png" height="35px" alt="Logo" className ={'float-left'}></img> 
       </div>
 
       <form onSubmit={onSubmit} className={NavBarStyles.form}>
@@ -39,10 +39,10 @@ const NavigationBar = (props) =>{
 
       <div className={'px-md-5 px-sm-3'}>
         <div className={'float-right'}>
-          <a><img className={['mx-md-2 mx-1', NavBarStyles.menuImg].join(" ")} src="assets/add.png" alt="Add icon" height="33px"></img></a>
-          <a><img className={['mx-md-2 mx-1', NavBarStyles.menuImg].join(" ")} src="assets/save.png" alt="Save icon" height="30px"></img></a>
-          <a onClick={()=>props.history.push("/")}><img className={['mx-md-2 mx-1', NavBarStyles.menuImg].join(" ")} src="assets/shopping-cart.png" alt="Shopping icon" height="30px"></img></a>
-          <a><img className={['mx-md-2 mx-1 rounded-circle', NavBarStyles.menuImg].join(" ")} src="assets/profile-pic.jpg" alt="Picture icon" height="30px" width="30px"></img></a>
+          <img className={['mx-md-2 mx-1', NavBarStyles.menuImg].join(" ")} src="assets/icons/add.png" alt="Add icon" height="33px"></img>
+          <img className={['mx-md-2 mx-1', NavBarStyles.menuImg].join(" ")} src="assets/icons/save.png" alt="Save icon" height="30px"></img>
+          <img onClick={()=>props.history.push("/")} className={['mx-md-2 mx-1', NavBarStyles.menuImg].join(" ")} src="assets/icons/shopping-cart.png" alt="Shopping icon" height="30px"></img>
+          <img className={['mx-md-2 mx-1 rounded-circle', NavBarStyles.menuImg].join(" ")} src="assets/icons/profile-pic.jpg" alt="Profile icon" height="30px" width="30px"></img>
         </div>
       </div>   
     </div>
