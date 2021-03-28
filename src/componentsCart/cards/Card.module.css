@@ -1,6 +1,6 @@
 .card{
     display: inline-block;
-    width: 140px;
+    width: 180px;
     height: 170px;
     position: relative;
 
@@ -10,14 +10,12 @@
     text-align: center;
     padding-top: 10px;
     color: black;
-    }
+}
+
 
 .card:hover{
     cursor: pointer;
-}
-
-.card:focus{
-    animation: addToCart 2000ms forwards;
+    border: 2px solid #0D4E70;
 }
 
 .imageContainer{
@@ -49,7 +47,7 @@
 }
 
 .cartButton{
-    width: 90%;
+    width: 94%;
 
     margin: 50px;
     padding: 7px;
@@ -63,7 +61,18 @@
     font-weight: 700;
 }
 
-@keyframes addToCart{
-    0%{top:0; left: 0}
-    100%{top: 600px;}
+@media screen and (max-width: 720px){
+    .card{
+        width: 140px;
+        height: 130px;
+    }
+
+    .name{
+        font-size: 18px;
+        font-weight: 200;
+    }
+
+    .cartButton{
+        width: 80%;
+    }
 }

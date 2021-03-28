@@ -1,7 +1,7 @@
 import NavigationBar from "./componentsHome/navigationBar/NavigationBar";
 import CategoryBar from "./componentsHome/categoryBar/CategoryBar";
 import {Component} from 'react'
-import axiosInstance from "C:/Program Projects/Visual Studio Code/React/Feastable/src/axiosComponents/axiosInstance.js"
+import axiosInstance from "./axiosComponents/axiosInstance"
 
 
 class Home extends Component{
@@ -57,10 +57,9 @@ class Home extends Component{
 					dessertRecipes= {this.state.dessertRecipes}
 					healthyRecipes= {this.state.healthyRecipes}
 				/>
-				</div>
+			</div>
 		)
 	}
 } 
 	
-
 export default Home;

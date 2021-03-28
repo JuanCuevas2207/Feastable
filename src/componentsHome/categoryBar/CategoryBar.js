@@ -9,12 +9,14 @@ import { Component} from 'react';
 class CategoryBar extends Component {
 
   setActive = e=>{
-    for(let i=1; i<=7;i++){
-      document.getElementById(i).style.fontWeight="400"
+    let id= e.target.id
 
-    }
-    const id= e.target.id
+    if(id!==""){
+      for(let i=1; i<=7;i++){
+        document.getElementById(i).style.fontWeight="400"
+      }
       document.getElementById(id).style.fontWeight="700"
+    }      
   }
 
   render(){

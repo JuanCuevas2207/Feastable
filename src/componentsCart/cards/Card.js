@@ -5,6 +5,7 @@ const Card = (props) =>{
     const addCard = e=>{
         const id= e.target.id;
         props.setCardList(id);
+        props.removeFood(id)
     }
 
     return(
