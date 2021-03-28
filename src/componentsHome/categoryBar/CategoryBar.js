@@ -8,6 +8,17 @@ import { Component} from 'react';
 
 class CategoryBar extends Component {
 
+  componentDidMount(){
+    if(this.props.id!==""){
+      for(let i=1; i<=7;i++){
+        document.getElementById(i).style.fontWeight="400"
+      }
+      document.getElementById(this.props.id).style.fontWeight="700"
+    }    
+  }
+
+  
+  
   setActive = e=>{
     let id= e.target.id
 

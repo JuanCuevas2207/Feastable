@@ -56,6 +56,7 @@ class Home extends Component{
 					snackRecipes= {this.state.snackRecipes}
 					dessertRecipes= {this.state.dessertRecipes}
 					healthyRecipes= {this.state.healthyRecipes}
+					id= {this.props.id}
 				/>
 			</div>
 		)
