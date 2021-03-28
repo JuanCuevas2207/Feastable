@@ -19,24 +19,15 @@ class Home extends Component{
 	  componentDidMount(){
 		axiosInstance.get("/recipesData.json")
 		.then(response=>{
-	
-		  const updatedBreakfastRecipes= response.data.breakfasts.map(recipe=>{return {id: recipe.id, name: recipe.name, rating: recipe.rating, time: recipe.time, image: recipe.image}});
-		  const updatedMainRecipes= response.data.main.map(recipe=>{return {id: recipe.id, name: recipe.name, rating: recipe.rating, time: recipe.time, image: recipe.image}});
-		  const updatedSaladRecipes= response.data.salads.map(recipe=>{return {id: recipe.id, name: recipe.name, rating: recipe.rating, time: recipe.time, image: recipe.image}});
-		  const updatedSoupRecipes= response.data.soups.map(recipe=>{return {id: recipe.id, name: recipe.name, rating: recipe.rating, time: recipe.time, image: recipe.image}});
-		  const updatedSnackRecipes= response.data.snacks.map(recipe=>{return {id: recipe.id, name: recipe.name, rating: recipe.rating, time: recipe.time, image: recipe.image}});
-		  const updatedDessertRecipes= response.data.desserts.map(recipe=>{return {id: recipe.id, name: recipe.name, rating: recipe.rating, time: recipe.time, image: recipe.image}});
-		  const updatedHealthyRecipes= response.data.healthy.map(recipe=>{return {id: recipe.id, name: recipe.name, rating: recipe.rating, time: recipe.time, image: recipe.image}});
-	
 		  
 		  this.setState({
-			breakfastRecipes: updatedBreakfastRecipes,
-			mainRecipes: updatedMainRecipes,
-			saladRecipes: updatedSaladRecipes,
-			soupRecipes: updatedSoupRecipes,
-			snackRecipes: updatedSnackRecipes,
-			dessertRecipes: updatedDessertRecipes,
-			healthyRecipes: updatedHealthyRecipes
+			breakfastRecipes: response.data.breakfasts,
+			mainRecipes: response.data.main,
+			saladRecipes: response.data.salads,
+			soupRecipes: response.data.soups,
+			snackRecipes: response.data.snacks,
+			dessertRecipes: response.data.desserts,
+			healthyRecipes: response.data.healthy
 		  })
 		  
 		}).catch(error=>
