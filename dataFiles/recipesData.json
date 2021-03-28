@@ -1,0 +1,57 @@
+{
+    "breakfasts": [
+        {"id": "B1", "name":"Desayuno 1", "time":"25", "rating":"3.5", "image":"breakfast.jpg"}, 
+	    {"id": "B2", "name":"Desayuno 2", "time":"60", "rating":"4.0", "image":"breakfast.jpg"},
+	    {"id": "B3", "name":"Desayuno 3", "time":"45", "rating":"4.9", "image":"breakfast.jpg"},
+	    {"id": "B4", "name":"Desayuno 4", "time":"50", "rating":"2.0", "image":"breakfast.jpg"},
+	    {"id": "B5", "name":"Desayuno 5", "time":"30", "rating":"4.9", "image":"breakfast.jpg"}
+    ],
+
+    "main": [
+        {"id": "M1", "name":"Plato Fuerte 1", "time":"25", "rating":"3.5", "image":"lunch.jpg"}, 
+	    {"id": "M2", "name":"Plato Fuerte 2", "time":"60", "rating":"4.0", "image":"lunch.jpg"},
+	    {"id": "M3", "name":"Plato Fuerte 3", "time":"45", "rating":"4.9", "image":"lunch.jpg"},
+	    {"id": "M4", "name":"Plato Fuerte 4", "time":"50", "rating":"2.0", "image":"lunch.jpg"},
+	    {"id": "M5", "name":"Plato Fuerte 5", "time":"30", "rating":"4.9", "image":"lunch.jpg"},
+	    {"id": "M6", "name":"Plato Fuerte 6", "time":"22", "rating":"2.0", "image":"lunch.jpg"}
+    ],
+    
+    "salads": [
+        {"id": "SA1", "name":"Ensalada 1", "time":"25", "rating":"3.5", "image":"salad.jpg"}, 
+	    {"id": "SA2", "name":"Ensalada 2", "time":"60", "rating":"4.0", "image":"salad.jpg"},
+	    {"id": "SA3", "name":"Ensalada 3", "time":"45", "rating":"4.9", "image":"salad.jpg"},
+	    {"id": "SA4", "name":"Ensalada 4", "time":"50", "rating":"2.0", "image":"salad.jpg"},
+	    {"id": "SA5", "name":"Ensalada 5", "time":"30", "rating":"4.9", "image":"salad.jpg"},
+	    {"id": "SA6", "name":"Ensalada 6", "time":"22", "rating":"2.0", "image":"salad.jpg"}
+    ],
+
+    "soups": [
+        {"id": "SO1", "name":"Sopa 1", "time":"25", "rating":"3.5", "image":"sopas.jpg"}, 
+	    {"id": "SO2", "name":"Sopa 2", "time":"60", "rating":"4.0", "image":"sopas.jpg"},
+	    {"id": "SO3", "name":"Sopa 3", "time":"45", "rating":"4.9", "image":"sopas.jpg"},
+	    {"id": "SO4", "name":"Sopa 4", "time":"50", "rating":"2.0", "image":"sopas.jpg"},
+	    {"id": "SO5", "name":"Sopa 5", "time":"30", "rating":"4.9", "image":"sopas.jpg"},
+	    {"id": "SO6", "name":"Sopa 6", "time":"22", "rating":"2.0", "image":"sopas.jpg"}
+    ],
+
+    "snacks": [
+        {"id": "S1", "name":"Snack 1", "time":"25", "rating":"3.5", "image":"snacks.jpg"}, 
+	    {"id": "S2", "name":"Snack 2", "time":"60", "rating":"4.0", "image":"snacks.jpg"},
+	    {"id": "S3", "name":"Snack 3", "time":"45", "rating":"4.9", "image":"snacks.jpg"},
+	    {"id": "S4", "name":"Snack 4", "time":"50", "rating":"2.0", "image":"snacks.jpg"},
+	    {"id": "S5", "name":"Snack 5", "time":"30", "rating":"4.9", "image":"snacks.jpg"}
+    ],
+
+    "desserts": [
+        {"id": "D1", "name":"Postre 1", "time":"25", "rating":"3.5", "image":"desserts.jpg"}, 
+	    {"id": "D2", "name":"Postre 2", "time":"60", "rating":"4.0", "image":"desserts.jpg"},
+	    {"id": "D3", "name":"Postre 3", "time":"45", "rating":"4.9", "image":"desserts.jpg"}
+    ],
+
+    "healthy": [
+        {"id": "H1", "name":"Healthy 1", "time":"25", "rating":"3.5", "image":"healthy.jpg"}, 
+	    {"id": "H2", "name":"Healthy 2", "time":"60", "rating":"4.0", "image":"healthy.jpg"},
+	    {"id": "H3", "name":"Healthy 3", "time":"45", "rating":"4.9", "image":"healthy.jpg"},
+        {"id": "H4", "name":"Healthy 4", "time":"45", "rating":"4.9", "image":"healthy.jpg"}
+    ]
+}
