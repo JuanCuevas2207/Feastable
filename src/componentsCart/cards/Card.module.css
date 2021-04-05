@@ -3,7 +3,6 @@
     width: 180px;
     height: 170px;
     position: relative;
-
     border: 1px solid #ccc;
     box-shadow: 2px 2px 3px #ccc;
     margin: 20px;
@@ -11,7 +10,6 @@
     padding-top: 10px;
     color: black;
 }
-
 
 .card:hover{
     cursor: pointer;
@@ -44,14 +42,13 @@
     margin-left: 50px;
     margin-right: 50px;
     color: black;
+    text-align: center;
 }
 
 .cartButton{
-    width: 94%;
-
-    margin: 50px;
-    padding: 7px;
-
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 18px;
     background-color: #0D4E70;
     color: white;
 }

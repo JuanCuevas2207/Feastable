@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Cart from "./Cart";
+import Login from "./Login";
 
-ReactDOM.render(<Cart />, document.getElementById('root'));
+ReactDOM.render(<Login />, document.getElementById('root'));

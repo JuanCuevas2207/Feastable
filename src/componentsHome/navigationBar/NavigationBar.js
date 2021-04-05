@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import NavBarStyles from './NavigationBar.module.css';
-import "C:/Program Projects/Visual Studio Code/React/Feastable/node_modules/bootstrap/dist/css/bootstrap.css"
+import "../../../node_modules/bootstrap/dist/css/bootstrap.css"
 import { withRouter } from 'react-router-dom'
+
 
 const NavigationBar = (props) =>{
   const[input, setInput] = useState("");
@@ -41,7 +42,7 @@ const NavigationBar = (props) =>{
         <div className={'float-right'}>
           <img className={['mx-md-2 mx-1', NavBarStyles.menuImg].join(" ")} src="assets/icons/add.png" alt="Add icon" height="33px"></img>
           <img className={['mx-md-2 mx-1', NavBarStyles.menuImg].join(" ")} src="assets/icons/save.png" alt="Save icon" height="30px"></img>
-          <img onClick={()=>props.history.push("/")} className={['mx-md-2 mx-1', NavBarStyles.menuImg].join(" ")} src="assets/icons/shopping-cart.png" alt="Shopping icon" height="30px"></img>
+          <img onClick={()=>props.history.push("/cart")} className={['mx-md-2 mx-1', NavBarStyles.menuImg].join(" ")} src="assets/icons/shopping-cart.png" alt="Shopping icon" height="30px"></img>
           <img className={['mx-md-2 mx-1 rounded-circle', NavBarStyles.menuImg].join(" ")} src="assets/icons/profile-pic.jpg" alt="Profile icon" height="30px" width="30px"></img>
         </div>
       </div>   
