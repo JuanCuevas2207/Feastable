@@ -1,38 +1,20 @@
 import { useState } from 'react';
 import fieldsStyle from './Fields.module.css'
-import axiosInstance from "../../axiosComponents/axiosInstance"
 
-const FillFields = () =>{
+const FillFields = (props) =>{
     const[username, setUsername] = useState("");
     const[password, setPassword] = useState("");
 
     const onSubmit = form => {
         form.preventDefault(); //avoids refresh
-    }
-
-    const checkUser = ()=>{
-        axiosInstance.get("/usersData.json")
-        .then(response =>{
-
-            response.forEach(element => {
-                if(element.data.user.userName.equals(username))
-                console.log("Si existe")
-                else
-                console.log("No existe")
-            });
-
-        }).catch(error=>
-            console.log(error)
-        );
-
-        setPassword("")
+        setPassword("");
     }
     
-    const inputUser = form => {     //permite que el usuario pueda escribir y se muestre en el input
+    const inputUser = form => { //permite que el usuario pueda escribir y se muestre en el input
         setUsername(form.target.value)
     }
 
-    const inputPassword = form => {     //permite que el usuario pueda escribir y se muestre en el input
+    const inputPassword = form => {//permite que el usuario pueda escribir y se muestre en el input
         setPassword(form.target.value)
     }
 
@@ -44,20 +26,20 @@ const FillFields = () =>{
                     type= "text"
                     placeholder = "Escriba su usuario"
                     value = {username}
-                    name = "text"
+                    name = "username"
                     className = {fieldsStyle.field}
                     onChange = {inputUser}
                 />
                 <label>Contraseña</label>
                 <input 
-                    type= "text"
+                    type= "password"
                     placeholder = "Escriba su contraseña"
                     value = {password}
-                    name = "text"
+                    name = "password"
                     className = {fieldsStyle.field}
                     onChange = {inputPassword}
                 />
-                <button className={fieldsStyle.buttons} onClick={checkUser}>Buscar</button>           
+                <button className={fieldsStyle.buttons} onClick={() => props.fields(username, password)}>Buscar</button>           
             </form>            
         </div>
     );

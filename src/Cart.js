@@ -6,7 +6,6 @@ import { Component } from 'react';
 import Home from "./Home";
 import axiosInstance from "./axiosComponents/axiosInstance"
 
-
 class Cart extends Component{
 
         state = {
@@ -100,7 +99,7 @@ class Cart extends Component{
                 return(
                         <>
                                 <BrowserRouter>
-                                        <Route path = "/" exact render = {()=>(
+                                        <Route path = "/cart" exact render = {()=>(
                                                 <>
                                                         <NavigationBar></NavigationBar>
                                                         <Cards

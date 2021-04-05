@@ -16,7 +16,9 @@
     border-radius: 6px;
 }
 
-h1{
+.header{
+    color: black;
     margin-top: 8px;
     margin-bottom: 30px;
+    font-size: 48px;
 }
