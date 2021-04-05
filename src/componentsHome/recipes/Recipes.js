@@ -1,5 +1,5 @@
 import Recipe from './Recipe';
-import "C:/Program Projects/Visual Studio Code/React/Feastable/node_modules/bootstrap/dist/css/bootstrap.css"
+import "../../../node_modules/bootstrap/dist/css/bootstrap.css"
 import {Component} from 'react'
 
 class Recipes extends Component{

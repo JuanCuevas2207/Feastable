@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import NavBarStyles from './NavigationBar.module.css';
-import "C:/Program Projects/Visual Studio Code/React/Feastable/node_modules/bootstrap/dist/css/bootstrap.css"
+import "../../../node_modules/bootstrap/dist/css/bootstrap.css"
 import { withRouter } from 'react-router-dom'
+
 
 const NavigationBar = (props) =>{
   const[input, setInput] = useState("");

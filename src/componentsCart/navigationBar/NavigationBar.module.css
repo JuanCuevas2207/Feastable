@@ -4,105 +4,91 @@
     padding-bottom: 8px;
     padding-left: 20px;
     padding-right: 20px;
-  
     background-color: #0D4E70;
     color: white;
-  
     justify-content: space-between;
     align-items: center;
-  }
-  
-  
-  .logo{
-    height:35px;
-  }
-
-  .logo:hover{
-    cursor: pointer;  
 }
-  
-  .form{
+
+.logo {
+    height: 35px;
+}
+
+.logo:hover {
+    cursor: pointer;
+}
+
+.form {
     border: 2px solid black;
     width: 500px;
-  }
-  
-  .buscador {
+}
+
+.buscador {
     padding-left: 15px;
     background-color: white;
     color: gray;
     border: none;
     width: 70%;
     font-size: 15px;
-  }
-  
-  .button{
+}
+
+.button {
     width: 30%;
     border: none;
     background-color: #166c9b;
     color: white;
     font-size: 15px;
-  }
-  
-  .buscador:focus {
-    border: none;
-    outline: none;
-  }
-  
-  .button:focus{
-    border: none;
-    outline: none;
-  }
-  
-  .button:hover{
-      font-weight: 700;
-  }
+}
 
-  .espacio{
-      width: 100px;
-      height: 20px;
-  }
-  
-  
-  @media screen and (max-width: 820px){
-    .buscador{
-      font-size: 13px;
+.buscador:focus {
+    border: none;
+    outline: none;
+}
+
+.button:focus {
+    border: none;
+    outline: none;
+}
+
+.button:hover {
+    font-weight: 700;
+}
+
+.espacio {
+    width: 100px;
+    height: 20px;
+}
+
+@media screen and (max-width: 820px) {
+    .buscador {
+        font-size: 13px;
     }
-  
-    .form{
-      border: 1px solid black;
-      width: 350px;
-      font-size: 13px;
+    .form {
+        border: 1px solid black;
+        width: 350px;
+        font-size: 13px;
     }
-  
-    .button{
-      font-size: 13px;
+    .button {
+        font-size: 13px;
     }
-  
-    .logo{
-      height: 25px;
+    .logo {
+        height: 25px;
     }
-  }
-  
-  @media screen and (max-width: 650px){
-    .buscador{
-      font-size: 10px;
+}
+
+@media screen and (max-width: 650px) {
+    .buscador {
+        font-size: 10px;
     }
-  
-    .form{
-      border: 1px solid black;
-      width: 250px;
-      font-size: 10px;
+    .form {
+        border: 1px solid black;
+        width: 250px;
+        font-size: 10px;
     }
-  
-    .button{
-      font-size: 10px;
+    .button {
+        font-size: 10px;
     }
-  
-    .logo{
-      height: 25px;
+    .logo {
+        height: 25px;
     }
-  }
-  
-  
-  
-  
+}

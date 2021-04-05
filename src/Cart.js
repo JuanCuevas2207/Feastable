@@ -116,7 +116,7 @@ class Cart extends Component{
                                                                 removeFood = {this.removeFood}
                                                         ></Cards>
                                                 </>
-                                        )}/>
+                                        )}></Route>
 
                                         <Route path = "/desayunos" render= {()=><Home id="1"/>}></Route>
                                         <Route path = "/platos-fuertes" render= {()=><Home id="2"/>}></Route>
