@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import fieldsStyle from './Fields.module.css'
+import { withRouter } from 'react-router-dom'
 
 const FillFields = (props) =>{
     const[username, setUsername] = useState("");
@@ -8,13 +9,16 @@ const FillFields = (props) =>{
     const onSubmit = form => {
         form.preventDefault(); //avoids refresh
         setPassword("");
+        console.log(props.validate)
+        if(props.validate)
+            props.history.push("/cart")
     }
     
-    const inputUser = form => { //permite que el usuario pueda escribir y se muestre en el input
+    const inputUser = form => { //permite que el usuario pueda escribir su nombre de usuario y se muestre
         setUsername(form.target.value)
     }
 
-    const inputPassword = form => {//permite que el usuario pueda escribir y se muestre en el input
+    const inputPassword = form => {//permite que el usuario pueda escribir su contraseña
         setPassword(form.target.value)
     }
 
@@ -45,4 +49,4 @@ const FillFields = (props) =>{
     );
 };
 
-export default FillFields;
+export default withRouter(FillFields);

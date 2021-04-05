@@ -10,7 +10,7 @@ const Container = (props) =>{
         <div className={ContainerStyles.container}>
             <div className={ContainerStyles.loginCard}>
                 <h1 className={ContainerStyles.header}>Login</h1>
-                <Fields fields={handleGetData}/>
+                <Fields fields={handleGetData} validate={props.validate}/>
             </div>
         </div>
     );

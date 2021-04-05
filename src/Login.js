@@ -3,15 +3,15 @@ import Container from "./componentsLogin/container/Container"
 import axiosInstance from "./axiosComponents/axiosInstance"
 import Cart from "./Cart"
 import { Component } from 'react'
-import { BrowserRouter } from 'react-router-dom';
-import { Route } from 'react-router-dom';
-import {withRouter} from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
+
 
 class Login extends Component{
-	
-	state = {
-		users: []
-	};
+
+	state={
+		validate: false
+	}
 
 	validateUser(userName, password){
 		axiosInstance.get("/usersData.json")
@@ -19,11 +19,11 @@ class Login extends Component{
 			response.data.user.forEach(user => {
 				if(user.userName.toLowerCase() === userName.toLowerCase() && user.password === password){
 					console.log("El usuario ingreso exitosamente")
-					this.state.history.push("/cart")
-				}else{
-					console.log("La contraseña o el nombre de usuario son incorrectos")
+					this.props.history.push("/cart")
 				}
 			});
+			if(!this.state.validate)
+				console.log("La contraseña o el nombre de usuario son incorrectos")
 		}).catch(error=>
 			console.log(error)
 		);
@@ -35,7 +35,7 @@ class Login extends Component{
 			    <Route path = "/" exact render= {()=>(
 					<>
 				        <BrandBar /> 
-				        <Container getUserData={this.validateUser}/>
+						<Container getUserData={this.validateUser} validate={this.state.validate}/>
 					</>
 				)}>
 				</Route>
@@ -45,4 +45,4 @@ class Login extends Component{
 	}
 }
 
-export default Login;
+export default withRouter(Login);
