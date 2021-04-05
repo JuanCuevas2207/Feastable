@@ -16,8 +16,6 @@ const Card = (props) =>{
             <h2 id={props.id} className={CardStyle.name}>{props.name}</h2>
         </div>
     );
-
-
-    };
+};
 
   export default Card;

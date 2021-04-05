@@ -42,7 +42,6 @@ class Cart extends Component{
             
                 if(listId==="F"){
                   updatedFruits = [...this.state.fruitsData].filter(food=>food.id!==id);
-            
                 }else if(listId==="V"){
                   updatedVegetables = [...this.state.vegetablesData].filter(food=>food.id!==id);
                 }else if(listId==="S"){
@@ -72,13 +71,13 @@ class Cart extends Component{
                 axiosInstance.get("/foodData.json")
                 .then(response=>{
             
-                  const updatedFruitsData= response.data.fruits.map(food=>{return {id: food.id, name: food.name, image: food.image, color: food.color}});
-                  const updatedVegetablesData= response.data.vegetables.map(food=>{return {id: food.id, name: food.name, image: food.image, color: food.color}})
-                  const updatedSeasoningsData= response.data.seasonings.map(food=>{return {id: food.id, name: food.name, image: food.image, color: food.color}})
-                  const updatedProteinsData= response.data.proteins.map(food=>{return {id: food.id, name: food.name, image: food.image, color: food.color}})
-                  const updatedGrainsData= response.data.grains.map(food=>{return {id: food.id, name: food.name, image: food.image, color: food.color}})
-                  const updatedDairyData= response.data.dairy.map(food=>{return {id: food.id, name: food.name, image: food.image, color: food.color}})
-                  const updatedLiquorsData= response.data.liquors.map(food=>{return {id: food.id, name: food.name, image: food.image, color: food.color}})
+                  const updatedFruitsData= response.data.fruits
+                  const updatedVegetablesData= response.data.vegetables
+                  const updatedSeasoningsData= response.data.seasonings
+                  const updatedProteinsData= response.data.proteins
+                  const updatedGrainsData= response.data.grains
+                  const updatedDairyData= response.data.dairy
+                  const updatedLiquorsData= response.data.liquors
             
                   this.setState({
                     fruitsData: updatedFruitsData,
