@@ -1,48 +1,72 @@
 import { useState } from 'react';
+import { withRouter } from 'react-router-dom';
 import fieldsStyle from './Fields.module.css'
 
 const FillFields = (props) =>{
+
     const[username, setUsername] = useState("");
     const[password, setPassword] = useState("");
 
     const onSubmit = form => {
         form.preventDefault(); //avoids refresh
+    }
+
+    const onSend = () =>{
         setPassword("");
+        props.checkInfo(username, password)
+        if(props.validate===true){
+            props.history.push("/cart")
+        }
     }
     
-    const inputUser = form => { //permite que el usuario pueda escribir y se muestre en el input
+    const inputUser = form => { //permite que el usuario pueda escribir su nombre de usuario y se muestre
         setUsername(form.target.value)
     }
 
-    const inputPassword = form => {//permite que el usuario pueda escribir y se muestre en el input
+    const inputPassword = form => {//permite que el usuario pueda escribir su contraseña
         setPassword(form.target.value)
     }
 
     return(
-        <div>
             <form onSubmit={onSubmit} className={fieldsStyle.form} autoComplete={"off"}>
-                <label>Usuario</label>
-                <input 
-                    type= "text"
-                    placeholder = "Escriba su usuario"
-                    value = {username}
-                    name = "username"
-                    className = {fieldsStyle.field}
-                    onChange = {inputUser}
-                />
-                <label>Contraseña</label>
-                <input 
+                
+                <div className={fieldsStyle.line}>
+                    <div className={fieldsStyle.titleSpace}>
+                        <h6 className={fieldsStyle.title}>Usuario</h6>
+                    </div>
+
+                    <div className={fieldsStyle.inputSpace}>
+                        <input 
+                        type= "text"
+                        placeholder = "Escriba su usuario"
+                        value = {username}
+                        name = "username"
+                        className = {fieldsStyle.field}
+                        onChange = {inputUser}
+                    />
+                    </div>
+                </div>
+
+                <div className={fieldsStyle.line}>
+                    <div className={fieldsStyle.titleSpace}>
+                        <h6 className={fieldsStyle.title}>Contraseña</h6>
+                    </div>
+
+                    <div className={fieldsStyle.inputSpace}>
+                    <input 
                     type= "password"
                     placeholder = "Escriba su contraseña"
                     value = {password}
                     name = "password"
                     className = {fieldsStyle.field}
                     onChange = {inputPassword}
-                />
-                <button className={fieldsStyle.buttons} onClick={() => props.fields(username, password)}>Buscar</button>           
+                    />
+                    </div>
+                </div>                 
+                
+                <button className={fieldsStyle.buttons} onClick={() => onSend()}>INGRESAR</button>           
             </form>            
-        </div>
     );
 };
 
-export default FillFields;
+export default withRouter(FillFields);

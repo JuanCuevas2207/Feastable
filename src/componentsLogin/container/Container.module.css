@@ -14,11 +14,13 @@
     color: black;
     align-items: center;
     border-radius: 6px;
+    background-color: white;
 }
 
 .header{
-    color: black;
+    color: #0D4E70;
     margin-top: 8px;
     margin-bottom: 30px;
     font-size: 48px;
+    font-weight: 900;
 }

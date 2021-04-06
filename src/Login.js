@@ -3,44 +3,56 @@ import Container from "./componentsLogin/container/Container"
 import axiosInstance from "./axiosComponents/axiosInstance"
 import Cart from "./Cart"
 import { Component } from 'react'
-import { BrowserRouter } from 'react-router-dom';
-import { Route } from 'react-router-dom';
-import {withRouter} from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom';
 
 class Login extends Component{
-	
-	state = {
-		users: []
-	};
 
-	validateUser(userName, password){
+	state = {
+		validate : false,
+		users:[],
+	}
+	
+	componentDidMount(){
 		axiosInstance.get("/usersData.json")
-		.then(response => {
-			response.data.user.forEach(user => {
-				if(user.userName.toLowerCase() === userName.toLowerCase() && user.password === password){
-					console.log("El usuario ingreso exitosamente")
-					this.state.history.push("/cart")
-				}else{
-					console.log("La contraseña o el nombre de usuario son incorrectos")
-				}
-			});
+		.then(response=>{
+		  this.setState({
+			users: response.data.user,
+		  })
+		  
 		}).catch(error=>
-			console.log(error)
+		  console.log(error)
 		);
+	}
+
+	checkInfo = (userName, password)=>{
+		this.state.users.forEach(user => {
+				if(user.userName.toLowerCase() === userName.toLowerCase() && user.password === password){
+					this.setState({
+						validate: true
+					});
+				}
+		});
+		if(this.state.validate===true){
+			console.log("You are in")
+		}
 	}
 
     render(){
 		return(
 			<BrowserRouter>
-			    <Route path = "/" exact render= {()=>(
-					<>
-				        <BrandBar /> 
-				        <Container getUserData={this.validateUser}/>
-					</>
-				)}>
-				</Route>
-				<Route path = "/cart" exact render= {()=><Cart />}></Route>
+			<Route path="/" exact render = {()=>(
+				<>
+				<BrandBar /> 
+				<Container checkInfo={this.checkInfo} validate={this.state.validate}/>
+				</>
+			)}></Route>
+
+			<Route path="/cart" exact render = {()=>(	
+				<Cart></Cart>
+			)}></Route>
+				
 			</BrowserRouter>
+				
 		)
 	}
 }

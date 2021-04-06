@@ -1,13 +1,45 @@
-.form{
-    text-align: center;
-}
-
 .buttons{
     margin: 12px;
+    background-color: #0D4E70;
+    color: white;
+    font-weight: 600;
+    width: 90%;
+    border: none;
+    padding: 5px;
+    align-self: center;
+}
+
+.buttons:hover{
+    font-weight: 700;
 }
 
 .field{
-    display: block;
+    display: inline-block;
     margin-top: 10px;
     margin-bottom: 10px;
+    width: 80%;
+}
+
+.title{
+    display: inline;
+    color: #0D4E70;
+}
+
+.titleSpace{
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+    text-align: center;
+}
+
+.inputSpace{
+    display: inline-block;
+    height: 100%;
+    width: 70%;
+    text-align: center;
+}
+
+.line{
+    width: 90%;
+    margin: auto;
 }
