@@ -14,9 +14,6 @@ const FillFields = (props) =>{
     const onSend = () =>{
         setPassword("");
         props.checkInfo(username, password)
-        if(props.validate===true){
-            props.history.push("/cart")
-        }
     }
     
     const inputUser = form => { //permite que el usuario pueda escribir su nombre de usuario y se muestre
@@ -64,7 +61,8 @@ const FillFields = (props) =>{
                     </div>
                 </div>                 
                 
-                <button className={fieldsStyle.buttons} onClick={() => onSend()}>INGRESAR</button>           
+                <button type="button" className={fieldsStyle.buttons} onClick={() => onSend()}>INGRESAR</button>
+                {props.validate ? <p></p> : <p className={fieldsStyle.wrongLogin}>Usuario y/o contraseña incorrectos</p>}           
             </form>            
     );
 };

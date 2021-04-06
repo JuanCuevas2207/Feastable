@@ -43,3 +43,8 @@
     width: 90%;
     margin: auto;
 }
+
+.wrongLogin{
+    color: red;
+    font-weight: bold;
+}
