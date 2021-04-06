@@ -17,7 +17,7 @@ class Login extends Component{
 	componentDidMount(){
 		axiosInstance.get("/usersData.json")
 		.then(response=>{
-		  this.setState({ users: response.data.user })
+		  this.setState({ users: response.data })
 		}).catch(error=>
 		  console.log(error)
 		);
@@ -35,6 +35,21 @@ class Login extends Component{
 		});
 	}
 
+	createUser = (newUserName, newPassword)=>{
+		const newUser = {
+			id: this.state.users.length+1,
+			userName: "Ana",
+			password: "Ana123",
+		}
+
+		axiosInstance.post("/usersData.json", newUser)
+		.then(response=>{
+		  console.log(response)
+		}).catch(error=>
+		  console.log(error)
+		);
+	}
+
     render(){
 		return(
 			<div>
@@ -42,6 +57,7 @@ class Login extends Component{
 					<>
 						<BrandBar /> 
 						<Container checkInfo={this.checkInfo} validate={this.state.validate}/>
+						<button onClick={this.createUser}>REGISTER USER</button>
 					</>
 				)}></Route>
 
