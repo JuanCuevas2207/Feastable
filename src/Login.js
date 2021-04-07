@@ -17,7 +17,7 @@ class Login extends Component{
 	componentDidMount(){
 		axiosInstance.get("/usersData.json")
 		.then(response=>{
-		  this.setState({ users: response.data })
+		  this.setState({ users: response.data.user })
 		}).catch(error=>
 		  console.log(error)
 		);
@@ -35,19 +35,16 @@ class Login extends Component{
 		});
 	}
 
-	createUser = (newUserName, newPassword)=>{
+	createUser = (userName, password)=>{
 		const newUser = {
 			id: this.state.users.length+1,
-			userName: "Ana",
-			password: "Ana123",
+			userName: userName,
+			password: password,
 		}
-
-		axiosInstance.post("/usersData.json", newUser)
-		.then(response=>{
-		  console.log(response)
-		}).catch(error=>
-		  console.log(error)
-		);
+		const newUsers = [...this.state.users, newUser]
+		this.setState({
+			users : newUsers
+		})
 	}
 
     render(){
@@ -56,8 +53,7 @@ class Login extends Component{
 				<Route path="/" exact render = {()=>(
 					<>
 						<BrandBar /> 
-						<Container checkInfo={this.checkInfo} validate={this.state.validate}/>
-						<button onClick={this.createUser}>REGISTER USER</button>
+						<Container checkInfo={this.checkInfo} validate={this.state.validate} users={this.state.users} createUser={this.createUser}/>
 					</>
 				)}></Route>
 

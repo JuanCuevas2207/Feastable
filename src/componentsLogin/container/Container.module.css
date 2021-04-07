@@ -25,6 +25,18 @@
     font-weight: 900;
 }
 
+.provisional{
+    display: block;
+
+    margin: 10px;
+    color: white;
+    background-color: #0D4E70;
+}
+
+.provisional:hover{
+    font-weight: 700;
+}
+
 @media screen and (max-width: 560px){
     .loginCard{
         width: 380px;
