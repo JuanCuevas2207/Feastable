@@ -10,7 +10,7 @@ const Card = (props) =>{
 
     return(
         <div id={props.id} className={CardStyle.card} onClick={addCard}>
-            <div id={props.id} className={CardStyle.imageContainer} style={{backgroundColor:props.color}}>
+            <div id={props.id} className={CardStyle.imageContainer} style={{background:  "linear-gradient(to bottom,"+props.primaryColor+", "+props.secondColor+")"}}>
                 <img id={props.id} className = {CardStyle.image} src={"/"+props.image} alt={props.name}></img>
             </div>
             <h2 id={props.id} className={CardStyle.name}>{props.name}</h2>

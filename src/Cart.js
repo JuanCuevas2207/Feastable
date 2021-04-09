@@ -67,7 +67,7 @@ class Cart extends Component{
         }
             
         componentDidMount(){
-                axiosInstance.get("/foodData.json")
+                axiosInstance.get("/foodData4.json")
                 .then(response=>{
             
                   const updatedFruitsData= response.data.fruits
