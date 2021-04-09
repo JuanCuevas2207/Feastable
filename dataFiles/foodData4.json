@@ -1,0 +1,52 @@
+{
+    "fruits": [
+        {"id": "F1", "name":"Manzana", "image":"assets/food/fruits/apple.png", "primaryColor":"#C04343", "secondColor":"#DD4C4C"},
+        {"id": "F2", "name":"Durazno", "image":"assets/food/fruits/peach.png", "primaryColor":"#FF9900", "secondColor":"#FFB444"},
+        {"id": "F3", "name":"Fresa", "image":"assets/food/fruits/strawberry.png", "primaryColor":"#E81414", "secondColor":"#EA4848"},
+        {"id": "F4", "name":"Naranja", "image":"assets/food/fruits/orange.png", "primaryColor":"#EA741F", "secondColor":"#F38A3E"}
+    ],
+
+    "vegetables": [
+        {"id": "V1", "name":"Cebolla", "image":"assets/food/vegetables/onion.png", "primaryColor":"#FFD196", "secondColor":"#F0D5B2"},
+        {"id": "V2", "name":"Lechuga", "image":"assets/food/vegetables/lettuce.png", "primaryColor":"#46C043", "secondColor":"#64C043"},
+        {"id": "V3", "name":"Berenjena", "image":"assets/food/vegetables/eggplant.png", "primaryColor":"#720598", "secondColor":"#9F41BF"},
+        {"id": "V4", "name":"Zanahoria", "image":"assets/food/vegetables/carrot.png", "primaryColor":"#F48636", "secondColor":"#F8A162"},
+        {"id": "V5", "name":"Pepino", "image":"assets/food/vegetables/cucumber.png", "primaryColor":"#088305", "secondColor":"#17A913"}
+    ],
+    
+    "seasonings":[
+        {"id": "S1", "name":"Sal", "image":"assets/food/seasonings/salt.png", "primaryColor":"#DEDEDE", "secondColor":"#F2ECEC"},
+        {"id": "S2", "name":"Pimienta", "image":"assets/food/seasonings/pepper.png", "primaryColor":"#531F09", "secondColor":"#833514"},
+        {"id": "S3", "name":"Jengibre", "image":"assets/food/seasonings/ginger.png", "primaryColor":"#CD9F65", "secondColor":"#E8B97E"},
+        {"id": "S4", "name":"Ajo", "image":"assets/food/seasonings/garlic.png", "primaryColor":"#EBD0AE", "secondColor":"#FAE1C2"},
+        {"id": "S5", "name":"Romero", "image":"assets/food/seasonings/romero.png", "primaryColor":"#145B1B", "secondColor":"#22902D"}
+    ],
+
+    "proteins":[
+        {"id": "P1", "name":"Carne", "image":"assets/food/proteins/meat.png", "primaryColor":"#813016", "secondColor":"#A94C2F"},
+        {"id": "P2", "name":"Pescado", "image":"assets/food/proteins/fish.png", "primaryColor":"#B8B8B8", "secondColor":"#DCDCDC"},
+        {"id": "P3", "name":"Huevo", "image":"assets/food/proteins/egg.png", "primaryColor":"#D4B371", "secondColor":"#E5C88F"},
+        {"id": "P4", "name":"Pollo", "image":"assets/food/proteins/chicken.png", "primaryColor":"#C2B08D", "secondColor":"#DCCDAE"}
+    ],
+
+    "dairy":[
+        {"id": "D1", "name":"Mantequilla", "image":"assets/food/dairy/butter.png", "primaryColor":"#F1DA01", "secondColor":"#FFF060"},
+        {"id": "D2", "name":"Leche", "image":"assets/food/dairy/milk.png", "primaryColor":"#B8B8B8", "secondColor":"#D7D7D7"},
+        {"id": "D3", "name":"Queso", "image":"assets/food/dairy/cheese.png", "primaryColor":"#DEA000", "secondColor":"#F4CF6D"},
+        {"id": "D4", "name":"Yogurt", "image":"assets/food/dairy/yogurt.png", "primaryColor":"#E08585", "secondColor":"#F1A5A5"}
+    ],
+
+    "grains":[
+        {"id": "G1", "name":"Arroz", "image":"assets/food/grains/rice.png", "primaryColor":"#ADADAD", "secondColor":"#DDDDDD"},
+        {"id": "G2", "name":"Frijol", "image":"assets/food/grains/bean.png", "primaryColor":"#5C1C21", "secondColor":"#84343B"},
+        {"id": "G3", "name":"Garbanzo", "image":"assets/food/grains/chickpea.png", "primaryColor":"#D69D59", "secondColor":"#ECBE88"},
+        {"id": "G4", "name":"Maiz", "image":"assets/food/grains/corn.png", "primaryColor":"#DEA513", "secondColor":"#EAC25D"}
+    ],
+
+    "liquors":[
+        {"id": "L1", "name":"Vino", "image":"assets/food/liquors/wine.png", "primaryColor":"#747474", "secondColor":"#B0AFAF"},
+        {"id": "L2", "name":"Cerveza", "image":"assets/food/liquors/beer.png", "primaryColor":"#CE9400", "secondColor":"#F2C758"},
+        {"id": "L3", "name":"Whiskey", "image":"assets/food/liquors/whiskey.png", "primaryColor":"#473316", "secondColor":"#7B5D30"},
+        {"id": "L4", "name":"Vodka", "image":"assets/food/liquors/vodka.png", "primaryColor":"#2E459A", "secondColor":"#546ABE"}
+    ]
+}
