@@ -27,42 +27,36 @@ const FillFields = (props) =>{
     return(
             <form onSubmit={onSubmit} className={fieldsStyle.form} autoComplete={"off"}>
                 
-                <div className={fieldsStyle.line}>
-                    <div className={fieldsStyle.titleSpace}>
-                        <h6 className={fieldsStyle.title}>Usuario</h6>
-                    </div>
+                <h6 className={fieldsStyle.title}>Usuario</h6>
 
-                    <div className={fieldsStyle.inputSpace}>
-                        <input 
-                        type= "text"
-                        placeholder = "Escriba su usuario"
-                        value = {username}
-                        name = "username"
-                        className = {fieldsStyle.field}
-                        onChange = {inputUser}
+                <div className={fieldsStyle.inputSpace}>
+                    <input 
+                    type= "text"
+                    placeholder = "Escriba su usuario"
+                    value = {username}
+                    name = "username"
+                    className = {fieldsStyle.field}
+                    onChange = {inputUser}
                     />
-                    </div>
                 </div>
 
-                <div className={fieldsStyle.line}>
-                    <div className={fieldsStyle.titleSpace}>
-                        <h6 className={fieldsStyle.title}>Contraseña</h6>
-                    </div>
+                <h6 className={fieldsStyle.title}>Contraseña</h6>
 
-                    <div className={fieldsStyle.inputSpace}>
-                    <input 
-                    type= "password"
-                    placeholder = "Escriba su contraseña"
-                    value = {password}
-                    name = "password"
-                    className = {fieldsStyle.field}
-                    onChange = {inputPassword}
-                    />
-                    </div>
-                </div>                 
+                <input 
+                type= "password"
+                placeholder = "Escriba su contraseña"
+                value = {password}
+                name = "password"
+                className = {fieldsStyle.field}
+                onChange = {inputPassword}
+                />    
+
+                <input type="checkbox" className={fieldsStyle.checkBox}></input> 
+                <h6 className={fieldsStyle.checkBoxLabel}>Remember me</h6>
+      
                 
                 <button type="button" className={fieldsStyle.buttons} onClick={() => onSend()}>INGRESAR</button>
-                {props.validate ? <p></p> : <p className={fieldsStyle.wrongLogin}>Usuario y/o contraseña incorrectos</p>}           
+                {props.validate ? <p></p> : <p className={fieldsStyle.wrongLogin}>Usuario y/o contraseña incorrectos</p>}   
             </form>            
     );
 };

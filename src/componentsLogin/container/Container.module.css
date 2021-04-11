@@ -6,7 +6,7 @@
 .loginCard{
     display: inline-block;
     position: relative;
-    width: 480px;
+    width: 400px;
     border: 1px solid #ccc;
     box-shadow: 2px 2px 3px #ccc;
     text-align: center;
@@ -19,8 +19,8 @@
 
 .header{
     color: #0D4E70;
-    margin-top: 8px;
-    margin-bottom: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     font-size: 48px;
     font-weight: 900;
 }
@@ -34,6 +34,22 @@
 }
 
 .provisional:hover{
+    font-weight: 700;
+}
+
+.registro{
+    font-size: 12px;
+    color: gray;
+}
+
+.registro a{
+    font-size: 12px;
+    color: #0D4E70;
+    text-decoration: underline;
+}
+
+.registro a:hover{
+    color: #0D4E70;
     font-weight: 700;
 }
 
