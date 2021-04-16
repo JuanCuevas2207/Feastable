@@ -1,11 +1,11 @@
 import BrandBar from "./componentsLogin/brandBar/BrandBar"
-import Container from "./componentsLogin/container/Container"
+import LoginContainer from "./componentsLogin/container/LoginContainer"
 import axiosInstance from "./axiosComponents/axiosInstance"
 import Cart from "./Cart"
 import Home from "./Home"
+import SignUp from "./SignUp"
 import { Component } from 'react'
-import { Route } from 'react-router-dom';
-import { withRouter } from 'react-router-dom';
+import { Route, withRouter  } from 'react-router-dom';
 
 class Login extends Component{
 
@@ -53,9 +53,11 @@ class Login extends Component{
 				<Route path="/" exact render = {()=>(
 					<>
 						<BrandBar /> 
-						<Container checkInfo={this.checkInfo} validate={this.state.validate} users={this.state.users} createUser={this.createUser}/>
+						<LoginContainer checkInfo={this.checkInfo} validate={this.state.validate} users={this.state.users} createUser={this.createUser}/>
 					</>
 				)}></Route>
+
+				<Route path = "/signUp" render= {()=><SignUp users={this.state.users} />}></Route>
 
 				<Route path="/cart" exact render = {()=>(	
 					<Cart></Cart>
