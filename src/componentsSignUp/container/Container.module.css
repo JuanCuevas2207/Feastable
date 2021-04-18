@@ -1,0 +1,60 @@
+.container{
+    text-align: center;
+    margin: 50px;
+}
+
+.signUpCard{
+    display: inline-block;
+    position: relative;
+    width: 400px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 3px #ccc;
+    text-align: center;
+    padding: 20px;
+    color: black;
+    align-items: center;
+    border-radius: 6px;
+    background-color: white;
+}
+
+.header{
+    color: #0D4E70;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 48px;
+    font-weight: 900;
+}
+
+.provisional{
+    display: block;
+
+    margin: 10px;
+    color: white;
+    background-color: #0D4E70;
+}
+
+.provisional:hover{
+    font-weight: 700;
+}
+
+.registro{
+    font-size: 12px;
+    color: gray;
+}
+
+.registro a{
+    font-size: 12px;
+    color: #0D4E70;
+    text-decoration: underline;
+}
+
+.registro a:hover{
+    color: #0D4E70;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 560px){
+    .loginCard{
+        width: 380px;
+    }
+}

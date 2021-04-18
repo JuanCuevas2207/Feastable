@@ -1,0 +1,56 @@
+.buttons{
+    width: 80%;
+    padding: 10px;
+    margin-top: 30px;
+
+    border: none;
+    background-color: #0D4E70;
+    color: white;
+    border-radius: 5px;
+
+    font-weight: 600;
+    font-size: 12px;
+}
+
+.buttons:hover{
+    font-weight: 700;
+}
+
+.field{
+    border-radius: 5px;
+    width: 80%;
+    padding: 5px;
+    border: 2px solid rgb(156, 156, 156);
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.title{
+    display: inline-block;
+    width: 80%;
+    margin-top: 15px;
+    font-size: 13px;
+    text-align: start;
+    color: #0D4E70;
+    font-weight: 700;
+}
+
+.checkBox{
+    display: inline;
+    margin-left: 190px;
+}
+
+.checkBoxLabel{
+    display: inline;
+    color: rgb(156, 156, 156);
+    font-size: 11px;
+    margin-left: 8px;
+    padding-bottom: 5px;
+}
+
+.wrongForm{
+    margin-top: 10px;
+    color: red;
+    font-weight: bold;
+    font-size: 11px;
+}

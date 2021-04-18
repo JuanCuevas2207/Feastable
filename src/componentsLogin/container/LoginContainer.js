@@ -12,7 +12,6 @@ const LoginContainer = (props) =>{
                 <Fields checkInfo={props.checkInfo} validate={props.validate}/>
             </div>
         </div>
-        <button className={ContainerStyles.provisional} onClick={()=>props.createUser("Cristian", "1234")}>SIGN UP A CRISTIAN</button>
         <button className={ContainerStyles.provisional} onClick={()=>console.log(props.users)}>VER TODOS LOS USUARIOS</button>
         </>
     );

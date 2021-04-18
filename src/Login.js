@@ -57,7 +57,7 @@ class Login extends Component{
 					</>
 				)}></Route>
 
-				<Route path = "/signUp" render= {()=><SignUp users={this.state.users} />}></Route>
+				<Route path = "/signUp" render= {()=><SignUp users={this.state.users} createUser={this.createUser} />}></Route>
 
 				<Route path="/cart" exact render = {()=>(	
 					<Cart></Cart>

@@ -12,7 +12,6 @@ const FillFields = (props) =>{
     }
 
     const onSend = () =>{
-        setPassword("");
         props.checkInfo(username, password)
     }
     
