@@ -43,6 +43,8 @@ const NavigationBar = (props) =>{
 
                 <img className={NavStyles.logo} src="assets/icons/home.png" onClick = {()=>props.history.push("/desayunos")} alt="Home"></img>
             </div>
+
+            <h4 className={NavStyles.title}>Selecciona los alimentos para filtrar tus recetas</h4> 
         </div>
     );
 };

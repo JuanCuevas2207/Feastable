@@ -59,6 +59,15 @@
     height: 20px;
 }
 
+.title{
+    color: #0D4E70;
+    font-size: 60px;
+    text-align: center;
+    margin: 20px;
+    font-weight: 600;
+    font-family: 'Slabo 27px', serif;
+}
+
 @media screen and (max-width: 820px) {
     .buscador {
         font-size: 13px;
@@ -73,6 +82,10 @@
     }
     .logo {
         height: 25px;
+    }
+
+    .title{
+        font-size: 40px;
     }
 }
 
@@ -90,5 +103,9 @@
     }
     .logo {
         height: 25px;
+    }
+
+    .title{
+        font-size: 30px;
     }
 }

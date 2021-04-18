@@ -17,7 +17,7 @@ class Cards extends Component{
           {this.props.dairyData.map(foodData => <Card key = {foodData.id} cardList={this.props.cardList} setCardList= {this.props.setCardList} removeFood={this.props.removeFood} {...foodData} />)}
           {this.props.liquorsData.map(foodData => <Card key = {foodData.id} cardList={this.props.cardList} setCardList= {this.props.setCardList} removeFood={this.props.removeFood} {...foodData} />)}
         
-          <button className={CardStyle.cartButton} onClick={()=>console.log(this.props.cardList)}>CONSOLE.LOG (MY CART)</button>
+          <button className={CardStyle.cartButton} onClick={()=>console.log(this.props.cardList)}>¿WHAT'S IN MY CART?</button>
         </div>
       </>
     );

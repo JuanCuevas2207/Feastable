@@ -52,7 +52,7 @@ class Login extends Component{
 			<div>
 				<Route path="/" exact render = {()=>(
 					<>
-						<BrandBar /> 
+						<BrandBar />
 						<LoginContainer checkInfo={this.checkInfo} validate={this.state.validate} users={this.state.users} createUser={this.createUser}/>
 					</>
 				)}></Route>

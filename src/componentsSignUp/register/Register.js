@@ -53,10 +53,10 @@ const Register = (props) =>{
             setMessage("Passwords are not the same");
         }
 
-        //checks that the passwords have more than 8 characters
+        //checks that the passwords have at least 8 characters
         if(password.length <= 7){
             validPasswords = false;
-            setMessage("Password needs to be at least 7 characters");
+            setMessage("Password needs to be at least 8 characters");
         }
 
         if(validPasswords===true && validUserName===true){
