@@ -1,5 +1,5 @@
-import BrandBar from "./componentsLogin/brandBar/BrandBar"
-import SignUpContainer from "./componentsSignUp/container/SignUpContainer"
+import BrandBar from "../Components/brandBar/BrandBar"
+import SignUpContainer from "../Components/signUpContainer/SignUpContainer"
 import { Component } from 'react'
 import { Route } from 'react-router-dom'
 

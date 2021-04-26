@@ -23,8 +23,11 @@ a{
 
 a:hover{
   color: white;
-  font-weight: bolder;
   text-decoration: underline;
+}
+
+.selected{
+  font-weight: 700;
 }
 
 

@@ -1,47 +1,25 @@
 import catBarStyles from './CategoryBar.module.css';
 import { BrowserRouter } from 'react-router-dom';
-import { Route, Link } from 'react-router-dom';
-import Title from "../title/Title";
+import { Route, NavLink } from 'react-router-dom';
+import Title from "../categoryTitle/Title";
 import Recipes from "../recipes/Recipes";
 import { Component} from 'react';
 
 
 class CategoryBar extends Component {
 
-  componentDidMount(){
-    if(this.props.id!==""){
-      for(let i=1; i<=7;i++){
-        document.getElementById(i).style.fontWeight="400"
-      }
-      document.getElementById(this.props.id).style.fontWeight="700"
-    }    
-  }
-
-  
-  
-  setActive = e=>{
-    let id= e.target.id
-
-    if(id!==""){
-      for(let i=1; i<=7;i++){
-        document.getElementById(i).style.fontWeight="400"
-      }
-      document.getElementById(id).style.fontWeight="700"
-    }      
-  }
-
   render(){
     return(
         <BrowserRouter>
           <div className={catBarStyles.categoryBar}>
             <ul>
-              <li className= {catBarStyles.activeCategory} onClick={this.setActive}><Link to="/desayunos" id="1">Desayunos</Link></li>
-              <li onClick={this.setActive}><Link to="/platos-fuertes" id="2">Platos Fuertes</Link></li>
-              <li onClick={this.setActive}><Link to="/ensaladas" id="3">Ensaladas</Link></li>
-              <li onClick={this.setActive}><Link to="/sopas" id="4">Sopas</Link></li>
-              <li onClick={this.setActive}><Link to="/snacks" id="5">Snacks</Link></li>
-              <li onClick={this.setActive}><Link to="/postres" id="6">Postres</Link></li>
-              <li onClick={this.setActive}><Link to="/healthy" id="7">Healthy</Link></li>
+              <NavLink to="/desayunos" activeClassName={catBarStyles.selected}>Desayunos</NavLink>
+              <NavLink to="/platos-fuertes" activeClassName={catBarStyles.selected}>Platos Fuertes</NavLink>
+              <NavLink to="/ensaladas" activeClassName={catBarStyles.selected}>Ensaladas</NavLink>
+              <NavLink to="/sopas" activeClassName={catBarStyles.selected}>Sopas</NavLink>
+              <NavLink to="/snacks" activeClassName={catBarStyles.selected}>Snacks</NavLink>
+              <NavLink to="/postres" activeClassName={catBarStyles.selected}>Postres</NavLink>
+              <NavLink to="/healthy" activeClassName={catBarStyles.selected}>Healthy</NavLink>
             </ul>
           </div>
   

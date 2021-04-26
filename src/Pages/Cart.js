@@ -1,10 +1,10 @@
-import Cards from "./componentsCart/cards/Cards";
-import NavigationBar from "./componentsCart/navigationBar/NavigationBar";
+import Cards from "../Components/cards/Cards";
+import NavigationBar from "../Components/cartNavigationBar/NavigationBar";
 import { BrowserRouter } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Component } from 'react';
 import Home from "./Home";
-import axiosInstance from "./axiosComponents/axiosInstance"
+import axiosInstance from "../Components/axios/axiosInstance"
 
 class Cart extends Component{
 
@@ -116,13 +116,13 @@ class Cart extends Component{
                                                 </>
                                         )}></Route>
 
-                                        <Route path = "/desayunos" render= {()=><Home id="1"/>}></Route>
-                                        <Route path = "/platos-fuertes" render= {()=><Home id="2"/>}></Route>
-                                        <Route path = "/ensaladas" render= {()=><Home id="3"/>}></Route>
-                                        <Route path = "/sopas" render= {()=><Home id="4"/>}></Route>
-                                        <Route path = "/snacks" render= {()=><Home id="5"/>}></Route>
-                                        <Route path = "/postres" render= {()=><Home id="6"/>}></Route>
-                                        <Route path = "/healthy" render= {()=><Home id="7"/>}></Route>
+                                        <Route path = "/desayunos" render= {()=><Home/>}></Route>
+                                        <Route path = "/platos-fuertes" render= {()=><Home/>}></Route>
+                                        <Route path = "/ensaladas" render= {()=><Home/>}></Route>
+                                        <Route path = "/sopas" render= {()=><Home/>}></Route>
+                                        <Route path = "/snacks" render= {()=><Home/>}></Route>
+                                        <Route path = "/postres" render= {()=><Home/>}></Route>
+                                        <Route path = "/healthy" render= {()=><Home/>}></Route>
                                         
                                 </BrowserRouter>
                         </>

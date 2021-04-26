@@ -1,7 +1,7 @@
-import NavigationBar from "./componentsHome/navigationBar/NavigationBar";
-import CategoryBar from "./componentsHome/categoryBar/CategoryBar";
+import NavigationBar from "../Components/homeNavigationBar/NavigationBar";
+import CategoryBar from "../Components/categoryBar/CategoryBar";
 import {Component} from 'react'
-import axiosInstance from "./axiosComponents/axiosInstance"
+import axiosInstance from "../Components/axios/axiosInstance"
 
 
 class Home extends Component{
@@ -47,7 +47,6 @@ class Home extends Component{
 					snackRecipes= {this.state.snackRecipes}
 					dessertRecipes= {this.state.dessertRecipes}
 					healthyRecipes= {this.state.healthyRecipes}
-					id= {this.props.id}
 				/>
 			</div>
 		)

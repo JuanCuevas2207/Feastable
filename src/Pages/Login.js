@@ -1,11 +1,12 @@
-import BrandBar from "./componentsLogin/brandBar/BrandBar"
-import LoginContainer from "./componentsLogin/container/LoginContainer"
-import axiosInstance from "./axiosComponents/axiosInstance"
+import BrandBar from "../Components/brandBar/BrandBar"
+import LoginContainer from "../Components/loginContainer/LoginContainer"
+import axiosInstance from "../Components/axios/axiosInstance"
 import Cart from "./Cart"
 import Home from "./Home"
 import SignUp from "./SignUp"
 import { Component } from 'react'
-import { Route, withRouter  } from 'react-router-dom';
+import { Route, withRouter} from 'react-router-dom';
+import Page404 from "./Page404"
 
 class Login extends Component{
 
@@ -17,7 +18,9 @@ class Login extends Component{
 	componentDidMount(){
 		axiosInstance.get("/usersData.json")
 		.then(response=>{
-		  this.setState({ users: response.data.user })
+		  	this.setState({ 
+			  users: response.data.user 
+			})
 		}).catch(error=>
 		  console.log(error)
 		);
@@ -63,13 +66,15 @@ class Login extends Component{
 					<Cart></Cart>
 				)}></Route>
 
-				<Route path = "/desayunos" render= {()=><Home id="1"/>}></Route>
-				<Route path = "/platos-fuertes" render= {()=><Home id="2"/>}></Route>
-				<Route path = "/ensaladas" render= {()=><Home id="3"/>}></Route>
-				<Route path = "/sopas" render= {()=><Home id="4"/>}></Route>
-				<Route path = "/snacks" render= {()=><Home id="5"/>}></Route>
-				<Route path = "/postres" render= {()=><Home id="6"/>}></Route>
-				<Route path = "/healthy" render= {()=><Home id="7"/>}></Route>
+				<Route path = "/desayunos" render= {()=><Home/>}></Route>
+				<Route path = "/platos-fuertes" render= {()=><Home/>}></Route>
+				<Route path = "/ensaladas" render= {()=><Home/>}></Route>
+				<Route path = "/sopas" render= {()=><Home/>}></Route>
+				<Route path = "/snacks" render= {()=><Home/>}></Route>
+				<Route path = "/postres" render= {()=><Home/>}></Route>
+				<Route path = "/healthy" render= {()=><Home/>}></Route>
+
+				<Route path = "/aa" render= {()=><Page404/>}></Route>
 			</div>
 		)
 	}

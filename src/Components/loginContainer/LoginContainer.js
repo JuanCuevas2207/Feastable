@@ -1,5 +1,5 @@
 import ContainerStyles from './Container.module.css';
-import Fields from '../login/Fields'
+import Fields from '../loginFields/Fields'
 import { Link } from 'react-router-dom';
 
 const LoginContainer = (props) =>{
@@ -12,7 +12,6 @@ const LoginContainer = (props) =>{
                 <Fields checkInfo={props.checkInfo} validate={props.validate}/>
             </div>
         </div>
-        <button className={ContainerStyles.provisional} onClick={()=>console.log(props.users)}>VER TODOS LOS USUARIOS</button>
         </>
     );
 };

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import fieldsStyle from '../register/Register.module.css'
+import fieldsStyle from '../signUpFields/Register.module.css'
 import {withRouter} from 'react-router-dom'
 
 const Register = (props) =>{

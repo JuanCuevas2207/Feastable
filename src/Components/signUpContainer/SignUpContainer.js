@@ -1,5 +1,5 @@
 import ContainerStyles from './Container.module.css';
-import Register from '../register/Register'
+import Register from '../signUpFields/Register'
 import { Link } from 'react-router-dom';
 
 const SignUpContainer = (props) =>{
