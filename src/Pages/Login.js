@@ -5,7 +5,7 @@ import Cart from "./Cart"
 import Home from "./Home"
 import SignUp from "./SignUp"
 import { Component } from 'react'
-import { Route, withRouter} from 'react-router-dom';
+import { Route, withRouter, Switch } from 'react-router-dom';
 import Page404 from "./Page404"
 
 class Login extends Component{
@@ -52,7 +52,7 @@ class Login extends Component{
 
     render(){
 		return(
-			<div>
+			<Switch>
 				<Route path="/" exact render = {()=>(
 					<>
 						<BrandBar />
@@ -74,8 +74,8 @@ class Login extends Component{
 				<Route path = "/postres" render= {()=><Home/>}></Route>
 				<Route path = "/healthy" render= {()=><Home/>}></Route>
 
-				<Route path = "/aa" render= {()=><Page404/>}></Route>
-			</div>
+				<Route path = "*" render= {()=><Page404/>}></Route>
+			</Switch>
 		)
 	}
 }
