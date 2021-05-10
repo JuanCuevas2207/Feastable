@@ -7,6 +7,9 @@ import SignUp from "./SignUp"
 import { Component } from 'react'
 import { Route, withRouter, Switch } from 'react-router-dom';
 import Page404 from "./Page404"
+import Settings from "./Settings"
+import * as actionTypes from '../Store/actions/actions'
+import { connect } from 'react-redux'
 
 class Login extends Component{
 
@@ -32,6 +35,7 @@ class Login extends Component{
 					this.props.history.push("/cart")
 					console.log("You are in")
 					this.setState({ validate: true })
+					this.props.onSignIn()
 				}else{
 					this.setState({ validate: false })
 				}
@@ -56,6 +60,7 @@ class Login extends Component{
 				<Route path="/" exact render = {()=>(
 					<>
 						<BrandBar />
+						<button onClick={()=>{console.log(this.props.isLogged)}}>IS LOGGED IN?</button>
 						<LoginContainer checkInfo={this.checkInfo} validate={this.state.validate} users={this.state.users} createUser={this.createUser}/>
 					</>
 				)}></Route>
@@ -74,10 +79,24 @@ class Login extends Component{
 				<Route path = "/postres" render= {()=><Home/>}></Route>
 				<Route path = "/healthy" render= {()=><Home/>}></Route>
 
+				<Route path = "/settings" render= {()=><Settings></Settings>}></Route>
+
 				<Route path = "*" render= {()=><Page404/>}></Route>
 			</Switch>
 		)
 	}
 }
 
-export default withRouter(Login);
+const mapStateToProps = (state)=>{
+	return{
+		isLogged: state.loggedStore.isLogged
+	}
+}
+
+const mapDispatchToProps = (dispatch)=>{
+	return{
+		onSignIn: ()=>{dispatch({type: actionTypes.SIGN_IN})}
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login));

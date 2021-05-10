@@ -1,0 +1,48 @@
+.container{
+    height: 25%;
+    width: 73%;
+    position: absolute;
+    left: 26%;
+    top: 12%;
+}
+
+.pic{
+    margin: 0;
+    position: absolute;
+    border-radius: 50%;
+    height: 80%;
+    left: 10%;
+    top: 5%;
+}
+
+.add{
+    background-color: #1C5979;
+    width: 5%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    top: 80%;
+    left: 16.5%;
+    transform: translate(-50%, -50%);
+}
+
+.add:hover{
+    cursor: pointer;
+}
+
+.addIcon{
+    height: 50%;
+}
+
+.name{
+    font-size: 50px;
+    font-weight: 700;
+    color: #0D4E70;
+    position: absolute;
+    top: 28%;
+    left: 26%;
+    
+}

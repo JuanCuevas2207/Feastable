@@ -1,0 +1,63 @@
+.container{
+    background-color: #756A81;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 85%;
+    margin-top: 20px;
+}
+
+.container:hover{
+    cursor: pointer;
+}
+
+.container:hover .label{
+    font-weight: 700;
+}
+
+.decoration{
+    height: 50px;
+    width: 3%;
+    background-color: #0D4E70;
+}
+
+.logo{
+    height: 25px;
+    margin-left: 20px;
+}
+
+.label{
+    font-size: 16px;
+    margin: 0;
+    margin-left: 15px;
+}
+
+
+@media screen and (max-width: 1300px){
+    .logo{
+        height: 15px;
+    }
+
+    .label{
+        font-size: 12px;
+    }
+
+    .decoration{
+        height: 35px;
+    }
+}
+
+@media screen and (max-width: 1000px){
+    .logo{
+        height: 15px;
+    }
+
+    .label{
+        font-size: 8px;
+    }
+
+    .decoration{
+        height: 30px;
+    }
+}

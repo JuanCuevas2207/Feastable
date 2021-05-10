@@ -1,0 +1,36 @@
+.container{
+    height: 92.7%;
+    width: 25%;
+    position: absolute;
+    background: #D97782;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.25);
+    padding-top: 60px;
+}
+
+.logOutContainer{
+    width: 70%;
+    height: 8%;
+    margin-top: 60%;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.logOutContainer:hover{
+    cursor: pointer;
+}
+
+.logOutContainer:hover .label{
+    font-weight: 700;
+}
+
+.logo{
+    height: 25px;
+    margin-left: 20px;
+}
+
+.label{
+    font-size: 20px;
+    margin: 0;
+    margin-left: 15px;
+}
