@@ -8,6 +8,7 @@ import {connect} from 'react-redux'
 import Cart from "./Cart";
 import Home from "./Home";
 import Login from "./Login";
+import RecipeDetails from "./RecipeDetails";
 
 class Settings extends Component{
 
@@ -43,10 +44,11 @@ class Settings extends Component{
 				<Route path = "/postres" render= {()=><Home></Home>}></Route>
 				<Route path = "/healthy" render= {()=><Home></Home>}></Route>
 
+				<Route path = "/details" exact render = {()=><RecipeDetails></RecipeDetails>}></Route>
+
 				<Route path="/" exact render = {()=><Login></Login>}></Route>
 
 			</BrowserRouter>
-			
 		)
 	}
 } 

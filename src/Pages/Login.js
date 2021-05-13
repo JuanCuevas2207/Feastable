@@ -10,6 +10,7 @@ import Page404 from "./Page404"
 import Settings from "./Settings"
 import * as actionTypes from '../Store/actions/actions'
 import { connect } from 'react-redux'
+import Recipe from "../Components/recipes/Recipe"
 
 class Login extends Component{
 
@@ -78,6 +79,8 @@ class Login extends Component{
 				<Route path = "/snacks" render= {()=><Home/>}></Route>
 				<Route path = "/postres" render= {()=><Home/>}></Route>
 				<Route path = "/healthy" render= {()=><Home/>}></Route>
+
+				<Route path = "/recipie" render= {()=><Recipe></Recipe>}></Route>
 
 				<Route path = "/settings" render= {()=><Settings></Settings>}></Route>
 

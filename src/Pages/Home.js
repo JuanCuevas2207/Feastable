@@ -3,8 +3,7 @@ import CategoryBar from "../Components/categoryBar/CategoryBar";
 import {Component} from 'react'
 import axiosInstance from "../Components/axios/axiosInstance"
 import { connect } from 'react-redux'
-import {withRouter} from 'react-router-dom'
-
+import { withRouter } from 'react-router-dom'
 
 class Home extends Component{
 
@@ -64,7 +63,5 @@ const mapStateToProps = (state)=>{
 		isLogged: state.loggedStore.isLogged
 	}
 }
-
-
 
 export default connect(mapStateToProps, null)(withRouter(Home));

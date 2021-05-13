@@ -6,6 +6,7 @@ import Home from "./Home";
 import axiosInstance from "../Components/axios/axiosInstance";
 import { connect } from 'react-redux'
 import Settings from "./Settings";
+import RecipeDetails from "./RecipeDetails";
 
 class Cart extends Component {
         
@@ -128,6 +129,8 @@ componentDidMount() {
                     <Route path="/snacks" render={() => <Home />}></Route>
                     <Route path="/postres" render={() => <Home />}></Route>
                     <Route path="/healthy" render={() => <Home />}></Route>
+
+                    <Route path = "/details" exact render = {()=><RecipeDetails></RecipeDetails>}></Route>
 
                     <Route path = "/settings" render= {()=><Settings></Settings>}></Route>
 
