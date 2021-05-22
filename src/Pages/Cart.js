@@ -3,10 +3,12 @@ import NavigationBar from "../Components/cartNavigationBar/NavigationBar";
 import { Route, BrowserRouter, withRouter } from 'react-router-dom';
 import { Component } from 'react';
 import Home from "./Home";
-import axiosInstance from "../Components/axios/axiosInstance";
+import axiosInstance from "../Instances/axios/axiosInstance";
 import { connect } from 'react-redux'
 import Settings from "./Settings";
 import RecipeDetails from "./RecipeDetails";
+import SignUp from "./SignUp";
+import * as actionCreators from '../Store/actions/food'
 
 class Cart extends Component {
         
@@ -19,7 +21,7 @@ class Cart extends Component {
         dairyData: [],
         grainsData: [],
         liquorsData: [],
-        }
+    }
 
     setCardList = (id) => {
         var updatedCards = [...this.state.cardList]
@@ -68,7 +70,7 @@ class Cart extends Component {
         })
 }
 
-componentDidMount() {
+    componentDidMount() {
         if(!this.props.isLogged){
             this.props.history.push("/");
         }else{
@@ -133,6 +135,7 @@ componentDidMount() {
                     <Route path = "/details" exact render = {()=><RecipeDetails></RecipeDetails>}></Route>
 
                     <Route path = "/settings" render= {()=><Settings></Settings>}></Route>
+                    <Route path = "/signUp" render= {()=><SignUp></SignUp>}></Route>
 
                 </BrowserRouter>
             </>
@@ -146,4 +149,11 @@ const mapStateToProps = (state)=>{
 	}
 }
 
-export default connect(mapStateToProps, null)(withRouter(Cart));
+const mapDispatchToProps = (dispatch) => {
+    return {
+        //
+    };
+  };
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Cart));

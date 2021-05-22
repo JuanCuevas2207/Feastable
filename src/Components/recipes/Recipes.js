@@ -7,7 +7,7 @@ class Recipes extends Component{
     return(
       <div className={"container"}>
         <div className={'row justify-content-center m-6'}>
-          {this.props.data.map(recipeData => <Recipe key = {recipeData.id}  {...recipeData} />)}
+          {Object.values(this.props.data).map(recipeData => <Recipe key = {recipeData.id}  {...recipeData} />)}
         </div>
       </div>
     )

@@ -26,57 +26,28 @@ const Register = (props) =>{
     }
 
     const onSend = () =>{
-        if(validateRegister(username, password, passwordConf)){
-            console.log("SUCCESSFUL SIGN UP");
-            props.createUser(username, password);
+        //checks that the passwords match
+        let isMatch = false;
+        if(password === passwordConf){
+            isMatch = true;
         }
         
+        const userData = {
+            email : username,
+            password: password,
+        }
+        props.submit(userData, isMatch)
     }
     
-    const validateRegister = (userName, password, passwordConf) =>{
-        var validRegister = false;
-        var validUserName = true;
-        var validPasswords = false;
-        
-        //checks the username doesnt already exists
-        props.users.forEach(user => {
-            if(user.userName.toLowerCase() === userName.toLowerCase()){
-                setMessage("Username already exists");
-                validUserName=false;
-            }
-        });
-
-         //checks that the passwords match
-        if(password === passwordConf){
-            validPasswords = true;
-        }else{
-            setMessage("Passwords are not the same");
-        }
-
-        //checks that the passwords have at least 8 characters
-        if(password.length <= 7){
-            validPasswords = false;
-            setMessage("Password needs to be at least 8 characters");
-        }
-
-        if(validPasswords===true && validUserName===true){
-            validRegister = true;
-            setMessage("");
-            props.history.push("/");
-        }
-
-        return validRegister;
-    }
-
     return(
         <form onSubmit={onSubmit} className={fieldsStyle.form} autoComplete={"off"}>
                 
-            <h6 className={fieldsStyle.title}>Nombre de usuario</h6>
+            <h6 className={fieldsStyle.title}>E-mail </h6>
 
             <div className={fieldsStyle.inputSpace}>
                 <input 
                 type= "text"
-                placeholder = "Escriba su usuario"
+                placeholder = "Escriba su email"
                 value = {username}
                 name = "username"
                 className = {fieldsStyle.field}
@@ -108,7 +79,7 @@ const Register = (props) =>{
             
             <button type="button" className={fieldsStyle.buttons} onClick={() => onSend()}>REGISTRAR</button>
 
-            <p className={fieldsStyle.wrongForm}>{invalidSignUp}</p>
+            <p className={fieldsStyle.wrongForm}>{props.errorMessage}</p>
 
         </form>            
     );

@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions/actions'
+import * as actionTypes from '../../Store/actions/actionTypes'
 
 //INITIAL STATE
 const inicialState = {
@@ -16,7 +16,6 @@ const loggedReducer = (state=inicialState, action)=>{
             return{
                 isLogged: false
         }
-
         default:
             return state
     }

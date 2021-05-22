@@ -1,7 +1,7 @@
 import {Component} from 'react'
 import sideBarStyles from '../settingsSideBar/SettingsSideBar.module.css'
 import SideBarOption from '../sideBarOption/SideBarOption'
-import * as actionTypes from '../../Store/actions/actions'
+import * as actionTypes from '../../Store/actions/actionTypes'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 

@@ -26,12 +26,12 @@ const FillFields = (props) =>{
     return(
             <form onSubmit={onSubmit} className={fieldsStyle.form} autoComplete={"off"}>
                 
-                <h6 className={fieldsStyle.title}>Usuario</h6>
+                <h6 className={fieldsStyle.title}>E-mail</h6>
 
                 <div className={fieldsStyle.inputSpace}>
                     <input 
                     type= "text"
-                    placeholder = "Escriba su usuario"
+                    placeholder = "Escriba su email"
                     value = {username}
                     name = "username"
                     className = {fieldsStyle.field}
@@ -55,7 +55,7 @@ const FillFields = (props) =>{
       
                 
                 <button type="button" className={fieldsStyle.buttons} onClick={() => onSend()}>INGRESAR</button>
-                {props.validate ? <p></p> : <p className={fieldsStyle.wrongLogin}>Usuario y/o contraseña incorrectos</p>}   
+                <p className={fieldsStyle.wrongLogin}>{props.errorMessage}</p>
             </form>            
     );
 };

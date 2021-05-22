@@ -1,6 +1,5 @@
 import BrandBar from "../Components/brandBar/BrandBar"
 import LoginContainer from "../Components/loginContainer/LoginContainer"
-import axiosInstance from "../Components/axios/axiosInstance"
 import Cart from "./Cart"
 import Home from "./Home"
 import SignUp from "./SignUp"
@@ -8,52 +7,22 @@ import { Component } from 'react'
 import { Route, withRouter, Switch } from 'react-router-dom';
 import Page404 from "./Page404"
 import Settings from "./Settings"
-import * as actionTypes from '../Store/actions/actions'
+import * as actionCreators from '../Store/actions/authentication'
 import { connect } from 'react-redux'
 import Recipe from "../Components/recipes/Recipe"
 
 class Login extends Component{
 
-	state = {
-		validate: true,
-		users:[]
-	}
-	
-	componentDidMount(){
-		axiosInstance.get("/usersData.json")
-		.then(response=>{
-		  	this.setState({ 
-			  users: response.data.user 
-			})
-		}).catch(error=>
-		  console.log(error)
-		);
-	}
-
 	checkInfo = (userName, password)=>{
-		this.state.users.forEach(user => {
-				if(user.userName.toLowerCase() === userName.toLowerCase() && user.password === password){
-					this.props.history.push("/cart")
-					console.log("You are in")
-					this.setState({ validate: true })
-					this.props.onSignIn()
-				}else{
-					this.setState({ validate: false })
-				}
-		});
-	}
-
-	createUser = (userName, password)=>{
-		const newUser = {
-			id: this.state.users.length+1,
-			userName: userName,
+		let userData = {
+			email: userName,
 			password: password,
 		}
-		const newUsers = [...this.state.users, newUser]
-		this.setState({
-			users : newUsers
-		})
+		this.props.onUserSignIn(userData, () => {
+			this.props.history.push("/cart");
+		  });
 	}
+
 
     render(){
 		return(
@@ -61,12 +30,11 @@ class Login extends Component{
 				<Route path="/" exact render = {()=>(
 					<>
 						<BrandBar />
-						<button onClick={()=>{console.log(this.props.isLogged)}}>IS LOGGED IN?</button>
-						<LoginContainer checkInfo={this.checkInfo} validate={this.state.validate} users={this.state.users} createUser={this.createUser}/>
+						<LoginContainer checkInfo={this.checkInfo} errorMessage = {this.props.message}/>
 					</>
 				)}></Route>
 
-				<Route path = "/signUp" render= {()=><SignUp users={this.state.users} createUser={this.createUser} />}></Route>
+				<Route path = "/signUp" render= {()=><SignUp></SignUp>}></Route>
 
 				<Route path="/cart" exact render = {()=>(	
 					<Cart></Cart>
@@ -83,6 +51,7 @@ class Login extends Component{
 				<Route path = "/recipie" render= {()=><Recipe></Recipe>}></Route>
 
 				<Route path = "/settings" render= {()=><Settings></Settings>}></Route>
+				<Route path = "/signUp" render= {()=><SignUp></SignUp>}></Route>
 
 				<Route path = "*" render= {()=><Page404/>}></Route>
 			</Switch>
@@ -92,14 +61,16 @@ class Login extends Component{
 
 const mapStateToProps = (state)=>{
 	return{
-		isLogged: state.loggedStore.isLogged
+		isLogged: state.loggedStore.isLogged,
+		message: state.signInErrorStore.message,
 	}
 }
 
-const mapDispatchToProps = (dispatch)=>{
-	return{
-		onSignIn: ()=>{dispatch({type: actionTypes.SIGN_IN})}
-	}
-}
+const mapDispatchToProps = (dispatch) => {
+    return {
+      onUserSignIn: (authData, onSuccessCallback) =>
+        dispatch(actionCreators.signIn(authData, onSuccessCallback)),
+    };
+  };
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login));

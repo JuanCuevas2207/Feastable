@@ -1,49 +1,36 @@
 import NavigationBar from "../Components/homeNavigationBar/NavigationBar";
 import CategoryBar from "../Components/categoryBar/CategoryBar";
 import {Component} from 'react'
-import axiosInstance from "../Components/axios/axiosInstance"
+import axiosInstance from "../Instances/axios/axiosInstance"
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import * as actionCreators from '../Store/actions/recipes'
 
 class Home extends Component{
 
 	state = {
-		breakfastRecipes: [],
-		mainRecipes: [],
-		saladRecipes: [],
-		soupRecipes: [],
-		snackRecipes: [],
-		dessertRecipes: [],
-		healthyRecipes: [],
+		recipes: {...this.props.recipes},
+		breakfastRecipes: {...this.props.recipes[0]},
+		dessertRecipes: {...this.props.recipes[1]},
+		healthyRecipes: {...this.props.recipes[2]},
+		mainRecipes: {...this.props.recipes[3]},
+		saladRecipes: {...this.props.recipes[4]},
+		snackRecipes: {...this.props.recipes[5]},
+		soupRecipes: {...this.props.recipes[6]},
 	  }
-	
-	  componentDidMount(){
+
+	componentDidMount(){
 		if(!this.props.isLogged){
 			this.props.history.push("/");
 		}else{
-			axiosInstance.get("/recipesData.json")
-			.then(response=>{
-			
-			this.setState({
-				breakfastRecipes: response.data.breakfasts,
-				mainRecipes: response.data.main,
-				saladRecipes: response.data.salads,
-				soupRecipes: response.data.soups,
-				snackRecipes: response.data.snacks,
-				dessertRecipes: response.data.desserts,
-				healthyRecipes: response.data.healthy
-			})
-			
-			}).catch(error=>
-				console.log(error)
-			);
-			}
-	} 
+			this.props.onFetchRecipes();
+		}
+	}
 
 	render(){
 		return(
 			<div>
-				<NavigationBar /> 
+				<NavigationBar/>
 				<CategoryBar 
 					breakfastRecipes = {this.state.breakfastRecipes}
 					mainRecipes= {this.state.mainRecipes}
@@ -60,8 +47,15 @@ class Home extends Component{
 
 const mapStateToProps = (state)=>{
 	return{
-		isLogged: state.loggedStore.isLogged
+		isLogged: state.loggedStore.isLogged,
+		recipes: state.recipesStore.recipes,
 	}
 }
 
-export default connect(mapStateToProps, null)(withRouter(Home));
+const mapDispatchToProps = (dispatch) => {
+    return {
+		onFetchRecipes: () => dispatch(actionCreators.fetchRecipes()),
+    };
+  };
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Home));

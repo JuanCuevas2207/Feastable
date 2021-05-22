@@ -9,6 +9,7 @@ import Cart from "./Cart";
 import Home from "./Home";
 import Login from "./Login";
 import RecipeDetails from "./RecipeDetails";
+import SignUp from "./SignUp";
 
 class Settings extends Component{
 
@@ -45,6 +46,8 @@ class Settings extends Component{
 				<Route path = "/healthy" render= {()=><Home></Home>}></Route>
 
 				<Route path = "/details" exact render = {()=><RecipeDetails></RecipeDetails>}></Route>
+
+				<Route path = "/signUp" render= {()=><SignUp></SignUp>}></Route>
 
 				<Route path="/" exact render = {()=><Login></Login>}></Route>
 
