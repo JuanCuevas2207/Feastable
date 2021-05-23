@@ -3,13 +3,14 @@ import authenticationAxios from '../../Instances/authentication/authenticationAx
 
 const API_KEY = "AIzaSyA5YYtCBR662zLJ7HWTBGcdvVGih3tyQi8";
 
-export const signUp = (authData, isMatch)=>{
+export const signUp = (authData, isMatch, onSuccessCallback)=>{
     return(dispatch)=>{
         if(isMatch){
             authenticationAxios
             .post("accounts:signUp?key=" + API_KEY, authData)
             .then((response)=>{
                 console.log(response)
+                onSuccessCallback();
             })
             .catch((error)=>{
                 switch(error.response.data.error.message){

@@ -31,8 +31,8 @@ const mapStateToProps = (state)=>{
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      onUserSignUp: (authData, isMatch) =>
-        dispatch(actionCreators.signUp(authData, isMatch)),
+      onUserSignUp: (authData, isMatch, onSuccessCallback) =>
+        dispatch(actionCreators.signUp(authData, isMatch, onSuccessCallback)),
     };
 };
   

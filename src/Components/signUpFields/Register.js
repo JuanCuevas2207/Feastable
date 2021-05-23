@@ -7,7 +7,6 @@ const Register = (props) =>{
     const[username, setUsername] = useState("");
     const[password, setPassword] = useState("");
     const[passwordConf, setPasswordConf] = useState("");
-    const[invalidSignUp, setMessage] = useState("");
 
     const inputUser = form => {
         setUsername(form.target.value)
@@ -36,7 +35,9 @@ const Register = (props) =>{
             email : username,
             password: password,
         }
-        props.submit(userData, isMatch)
+        props.submit(userData, isMatch, ()=>{
+            props.history.push('/')
+        })
     }
     
     return(

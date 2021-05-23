@@ -8,7 +8,6 @@ import { connect } from 'react-redux'
 import Settings from "./Settings";
 import RecipeDetails from "./RecipeDetails";
 import SignUp from "./SignUp";
-import * as actionCreators from '../Store/actions/food'
 
 class Cart extends Component {
         

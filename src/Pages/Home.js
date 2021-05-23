@@ -1,7 +1,6 @@
 import NavigationBar from "../Components/homeNavigationBar/NavigationBar";
 import CategoryBar from "../Components/categoryBar/CategoryBar";
 import {Component} from 'react'
-import axiosInstance from "../Instances/axios/axiosInstance"
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import * as actionCreators from '../Store/actions/recipes'
@@ -20,17 +19,18 @@ class Home extends Component{
 	  }
 
 	componentDidMount(){
+		this.props.onFetchRecipes();
+		
 		if(!this.props.isLogged){
 			this.props.history.push("/");
-		}else{
-			this.props.onFetchRecipes();
 		}
 	}
 
 	render(){
 		return(
 			<div>
-				<NavigationBar/>
+				<NavigationBar></NavigationBar>
+
 				<CategoryBar 
 					breakfastRecipes = {this.state.breakfastRecipes}
 					mainRecipes= {this.state.mainRecipes}
