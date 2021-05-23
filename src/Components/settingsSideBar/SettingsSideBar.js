@@ -15,7 +15,6 @@ class SettingsSideBar extends Component{
     render(){
         return(
                 <div className={sideBarStyles.container}>
-                    <button onClick={()=>{console.log(this.props.isLogged)}}>IS LOGGED IN?</button>
                     <SideBarOption logo="assets/icons/settings.png" name="Configuración de la Cuenta"></SideBarOption>
                     <SideBarOption logo="assets/icons/favorite.png" name="Recetas Favoritas"></SideBarOption>
                     <SideBarOption logo="assets/icons/recipe.png" name="Mis Recetas"></SideBarOption>

@@ -3,11 +3,12 @@ import NavigationBar from "../Components/cartNavigationBar/NavigationBar";
 import { Route, BrowserRouter, withRouter } from 'react-router-dom';
 import { Component } from 'react';
 import Home from "./Home";
-import axiosInstance from "../Instances/axios/axiosInstance";
 import { connect } from 'react-redux'
 import Settings from "./Settings";
 import RecipeDetails from "./RecipeDetails";
 import SignUp from "./SignUp";
+import * as actionCreators from '../Store/actions/food'
+import Spinner from "../Components/spinner/Spinner";
 
 class Cart extends Component {
         
@@ -21,11 +22,50 @@ class Cart extends Component {
         grainsData: [],
         liquorsData: [],
     }
+		
+	componentDidMount(){
+		if(!this.props.isLogged){
+			this.props.history.push("/");
+		}else{
+			this.props.onFetchFood(this.changeState);
+		}
+	}
+
+	changeState = ()=>{
+		this.setState({
+            fruitsData: [...this.props.food[1]],
+            vegetablesData: [...this.props.food[6]],
+            seasoningsData: [...this.props.food[5]],
+            proteinsData: [...this.props.food[4]],
+            dairyData: [...this.props.food[0]],
+            grainsData: [...this.props.food[2]],
+            liquorsData: [...this.props.food[3]],
+		})
+	}
+
+	renderContent= () => {
+		let content = <Cards
+        cardList={this.state.cardList}
+        fruitsData={this.state.fruitsData}
+        vegetablesData={this.state.vegetablesData}
+        seasoningsData={this.state.seasoningsData}
+        proteinsData={this.state.proteinsData}
+        grainsData={this.state.grainsData}
+        dairyData={this.state.dairyData}
+        liquorsData={this.state.liquorsData}
+        setCardList={this.setCardList}
+        removeFood={this.removeFood}
+    ></Cards>
+	
+		if (this.props.loadingFood) {
+		  content =<Spinner></Spinner>
+		}
+		return content;
+	};
 
     setCardList = (id) => {
         var updatedCards = [...this.state.cardList]
         updatedCards.push(id)
-
         this.setState({
                 cardList: updatedCards
         })
@@ -67,40 +107,7 @@ class Cart extends Component {
             grainsData: updatedGrains,
             liquorsData: updatedLiquors,
         })
-}
-
-    componentDidMount() {
-        if(!this.props.isLogged){
-            this.props.history.push("/");
-        }else{
-            axiosInstance.get("/foodData4.json")
-            .then(response => {
-
-                const updatedFruitsData = response.data.fruits
-                const updatedVegetablesData = response.data.vegetables
-                const updatedSeasoningsData = response.data.seasonings
-                const updatedProteinsData = response.data.proteins
-                const updatedGrainsData = response.data.grains
-                const updatedDairyData = response.data.dairy
-                const updatedLiquorsData = response.data.liquors
-
-                this.setState({
-                    fruitsData: updatedFruitsData,
-                    vegetablesData: updatedVegetablesData,
-                    seasoningsData: updatedSeasoningsData,
-                    proteinsData: updatedProteinsData,
-                    grainsData: updatedGrainsData,
-                    dairyData: updatedDairyData,
-                    liquorsData: updatedLiquorsData
-                })
-
-                }).catch(error =>
-                        console.log(error)
-            );
-        }
     }
-
-
     render() {
         return (
             <>
@@ -108,18 +115,7 @@ class Cart extends Component {
                     <Route path="/cart"  exact render={() => (
                         <>
                             <NavigationBar></NavigationBar>
-                            <Cards
-                                cardList={this.state.cardList}
-                                fruitsData={this.state.fruitsData}
-                                vegetablesData={this.state.vegetablesData}
-                                seasoningsData={this.state.seasoningsData}
-                                proteinsData={this.state.proteinsData}
-                                grainsData={this.state.grainsData}
-                                dairyData={this.state.dairyData}
-                                liquorsData={this.state.liquorsData}
-                                setCardList={this.setCardList}
-                                removeFood={this.removeFood}
-                            ></Cards>
+                            {this.renderContent()}
                         </>
                     )}></Route>
 
@@ -144,15 +140,18 @@ class Cart extends Component {
 
 const mapStateToProps = (state)=>{
 	return{
-		isLogged: state.loggedStore.isLogged
+		isLogged: state.loggedStore.isLogged,
+		food: state.foodStore.food,
+		loadingFood: state.foodStore.loadingFood,
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        //
+		onFetchFood: (onSuccessCallback) => {
+			dispatch(actionCreators.fetchFood(onSuccessCallback));
+		}
     };
-  };
-
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Cart));
