@@ -47,7 +47,7 @@ class Login extends Component{
 					</>
 				)}></Route>
 
-				<Route path="/cart" exact render = {()=>(	<Cart></Cart>)}></Route>
+				<Route path="/cart" exact render = {()=>(<Cart></Cart>)}></Route>
 				<Route path = "/desayunos" render= {()=><Home/>}></Route>
 				<Route path = "/platos-fuertes" render= {()=><Home/>}></Route>
 				<Route path = "/ensaladas" render= {()=><Home/>}></Route>

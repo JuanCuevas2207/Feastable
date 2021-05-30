@@ -1,4 +1,3 @@
-import NavigationBar from "../Components/homeNavigationBar/NavigationBar";
 import CategoryBar from "../Components/categoryBar/CategoryBar";
 import {Component} from 'react'
 import { connect } from 'react-redux'
@@ -60,7 +59,6 @@ class Home extends Component{
 	render(){
 		return(
 			<div>
-				<NavigationBar></NavigationBar>
 				{this.renderContent()}
 			</div>
 		)

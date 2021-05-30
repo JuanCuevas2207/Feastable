@@ -23,7 +23,7 @@ const NavigationBar = (props) =>{
     <div className={[NavBarStyles.header, 'py-2 align-items-center'].join(" ")}>  
 
       <div className={'px-md-5 px-sm-4 px-3'}>
-        <img onClick={()=>props.history.push("/postres")} src="assets/icons/logo.png" height="35px" alt="Logo" className={[NavBarStyles.logoImage, 'float-left'].join(" ")} ></img> 
+        <img onClick={()=>props.history.push("/desayunos")} src="assets/icons/logo.png" height="35px" alt="Logo" className={[NavBarStyles.logoImage, 'float-left'].join(" ")} ></img> 
       </div>
 
       <form onSubmit={onSubmit} className={NavBarStyles.form}>

@@ -1,9 +1,11 @@
 import { Component } from 'react';
 import Details from "../Components/recipeDetails/Details";
 import { BrowserRouter, Route, withRouter } from 'react-router-dom';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import Home from './Home';
 import Login from './Login';
+import NavigationBar from '../Components/homeNavigationBar/NavigationBar';
+import Cart from './Cart';
 
 class RecipeDetails extends Component{
     componentDidUpdate(){
@@ -15,14 +17,18 @@ class RecipeDetails extends Component{
         return(
             <BrowserRouter>
                 <Route path="/details" render = {()=>(	
-					<Details 
-                        title={this.props.location.state.title}
-                        duration={this.props.location.state.duration}
-                        rating={this.props.location.state.rating}                   
-                        imageURL={this.props.location.state.imageURL}>
-                    </Details>
+                    <>
+                        <NavigationBar></NavigationBar>
+                        <Details 
+                            title={this.props.location.state.title}
+                            duration={this.props.location.state.duration}
+                            rating={this.props.location.state.rating}                   
+                            imageURL={this.props.location.state.imageURL}>
+                        </Details>
+                    </>
 				)}></Route>
 
+                <Route path="/cart" exact render = {()=>(<Cart></Cart>)}></Route>
 				<Route path = "/desayunos" render= {()=><Home/>}></Route>
 				<Route path = "/platos-fuertes" render= {()=><Home/>}></Route>
 				<Route path = "/ensaladas" render= {()=><Home/>}></Route>
