@@ -6,6 +6,8 @@ import Categorys from "./Categorys";
 import { Component} from 'react';
 import RecipeDetails from '../../Pages/RecipeDetails'
 import NavigationBar from '../homeNavigationBar/NavigationBar';
+import Cart from '../../Pages/Cart';
+import Settings from '../../Pages/Settings';
 
 class CategoryBar extends Component {
 
@@ -82,7 +84,9 @@ class CategoryBar extends Component {
           )}>
           </Route>
 
+          <Route path="/cart" exact render = {()=>(<Cart></Cart>)}></Route>
           <Route path = "/details" exact render = {()=><RecipeDetails></RecipeDetails>}></Route>
+          <Route path = "/settings" render= {()=><Settings></Settings>}></Route>
 
         </BrowserRouter>
     );
