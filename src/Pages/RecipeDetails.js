@@ -6,6 +6,7 @@ import Home from './Home';
 import Login from './Login';
 import NavigationBar from '../Components/homeNavigationBar/NavigationBar';
 import Cart from './Cart';
+import Settings from './Settings';
 
 class RecipeDetails extends Component{
     componentDidUpdate(){
@@ -29,6 +30,7 @@ class RecipeDetails extends Component{
 				)}></Route>
 
                 <Route path="/cart" exact render = {()=>(<Cart></Cart>)}></Route>
+                <Route path = "/settings" render= {()=><Settings></Settings>}></Route>
 				<Route path = "/desayunos" render= {()=><Home/>}></Route>
 				<Route path = "/platos-fuertes" render= {()=><Home/>}></Route>
 				<Route path = "/ensaladas" render= {()=><Home/>}></Route>
