@@ -31,5 +31,6 @@ ReactDOM.render(
         <BrowserRouter>
             <Login />
         </BrowserRouter>
-    </Provider>
-, document.getElementById('root'));
+    </Provider>, 
+    document.getElementById('root')
+);

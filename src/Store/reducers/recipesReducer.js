@@ -18,7 +18,6 @@ const fetchRecipes = (state, action) => {
   return updateObject(state, { recipes: action.payload.recipes });
 };
 
-
 const recipesReducer = (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.FETCH_RECIPES:

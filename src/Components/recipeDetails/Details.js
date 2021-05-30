@@ -24,7 +24,7 @@ const RecipeDetails = (props) =>{
                             <p className={detailsStyle.subTitles}>Tiempo de preparacion</p>
                         </div>
                         <div className={detailsStyle.col}>
-                            <h6 className={detailsStyle.titles}><img src="assets/icons/clock.png" height="40px" alt="Clock"></img></h6>
+                            <h6 className={detailsStyle.titles}><img src="assets/icons/bookmark.png" height="40px" alt="Clock"></img></h6>
                             <p className={detailsStyle.subTitles}>Guardar receta</p>
                         </div>
                     </div>

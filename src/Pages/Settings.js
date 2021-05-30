@@ -7,17 +7,15 @@ import {BrowserRouter, Route, withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import Cart from "./Cart";
 import Home from "./Home";
-import Login from "./Login";
 import RecipeDetails from "./RecipeDetails";
 import SignUp from "./SignUp";
 
 class Settings extends Component{
-
-	componentDidMount() {
-		if(!this.props.isLogged){
-				this.props.history.push("/");
+	componentDidUpdate(){
+        if(!this.props.isUserLoggedIn){
+			this.props.history.push("/")
 		}
-	}
+    }
 
 	render(){
 		return(
@@ -25,6 +23,7 @@ class Settings extends Component{
 				<Route path = "/settings" render= {()=>{
 					return(
 						<div> 
+							<button onClick={() => console.log(this.props.isUserLoggedIn)}></button>
 							<NavigationBar></NavigationBar>
 							<SettingsSideBar></SettingsSideBar>
 							<UserName></UserName>
@@ -48,18 +47,14 @@ class Settings extends Component{
 				<Route path = "/details" exact render = {()=><RecipeDetails></RecipeDetails>}></Route>
 
 				<Route path = "/signUp" render= {()=><SignUp></SignUp>}></Route>
-
-				<Route path="/" exact render = {()=><Login></Login>}></Route>
-
 			</BrowserRouter>
 		)
 	}
 } 
 	
-
 const mapStateToProps = (state)=>{
 	return{
-		isLogged: state.loggedStore.isLogged
+		isUserLoggedIn: state.loggedStore.isUserLoggedIn,
 	}
 }
 

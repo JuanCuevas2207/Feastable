@@ -28,6 +28,10 @@ const signUpErrorReducer = (state=inicialState, action)=>{
             return{
                 message: "Las contraseñas no coinciden"
         }
+        case actionTypes.EMAIL_EXISTS:
+            return{
+                message: "El correo ingresado ya esta registrado"
+        }
         default:
             return{
                 message: ""

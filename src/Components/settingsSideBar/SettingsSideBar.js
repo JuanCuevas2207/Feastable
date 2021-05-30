@@ -1,17 +1,11 @@
 import {Component} from 'react'
 import sideBarStyles from '../settingsSideBar/SettingsSideBar.module.css'
 import SideBarOption from '../sideBarOption/SideBarOption'
-import * as actionTypes from '../../Store/actions/actionTypes'
 import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
+import * as actionCreators from '../../Store/actions/authentication'
 
 class SettingsSideBar extends Component{
-
-    logOutHandler=()=>{
-        this.props.onLogOut();
-        this.props.history.push("/");
-    }
-
     render(){
         return(
                 <div className={sideBarStyles.container}>
@@ -19,7 +13,7 @@ class SettingsSideBar extends Component{
                     <SideBarOption logo="assets/icons/favorite.png" name="Recetas Favoritas"></SideBarOption>
                     <SideBarOption logo="assets/icons/recipe.png" name="Mis Recetas"></SideBarOption>
                     <SideBarOption logo="assets/icons/cart.png" name="Mi Carrito"></SideBarOption>
-                    <div className={sideBarStyles.logOutContainer} onClick={()=>{this.logOutHandler()}}>
+                    <div className={sideBarStyles.logOutContainer} onClick={this.props.onLogOut}>
                         <img src='assets/icons/exit.png' className={sideBarStyles.logo} alt="logo"></img>
                         <h1 className={sideBarStyles.label}>Cerrar Sesión</h1>
                     </div>
@@ -28,16 +22,10 @@ class SettingsSideBar extends Component{
     }
 }
 
-const mapStateToProps = (state)=>{
-	return{
-		isLogged: state.loggedStore.isLogged
-	}
-}
-
 const mapDispatchToProps = (dispatch)=>{
 	return{
-		onLogOut: ()=>{dispatch({type: actionTypes.LOG_OUT})}
+		onLogOut: () => dispatch(actionCreators.logOut())
 	}
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SettingsSideBar));
+export default connect(null, mapDispatchToProps)(withRouter(SettingsSideBar));

@@ -19,12 +19,13 @@ class Home extends Component{
 	}
 		
 	componentDidMount(){
-		if(!this.props.isLogged){
-			this.props.history.push("/");
-		}else{
-			this.props.onFetchRecipes(this.changeState);
-		}
+		this.props.onFetchRecipes(this.changeState);
 	}
+
+	componentDidUpdate(){
+        if(!this.props.isUserLoggedIn)
+            this.props.history.push("/")
+    }
 
 	changeState = ()=>{
 		this.setState({
@@ -68,7 +69,7 @@ class Home extends Component{
 
 const mapStateToProps = (state)=>{
 	return{
-		isLogged: state.loggedStore.isLogged,
+		isUserLoggedIn: state.loggedStore.isUserLoggedIn,
 		recipes: state.recipesStore.recipes,
 		loadingRecipes: state.recipesStore.loadingRecipes,
 	}

@@ -24,12 +24,13 @@ class Cart extends Component {
     }
 		
 	componentDidMount(){
-		if(!this.props.isLogged){
-			this.props.history.push("/");
-		}else{
-			this.props.onFetchFood(this.changeState);
-		}
+		this.props.onFetchFood(this.changeState);
 	}
+
+    componentDidUpdate(){
+        if(!this.props.isUserLoggedIn)
+            this.props.history.push("/")
+    }
 
 	changeState = ()=>{
 		this.setState({
@@ -140,7 +141,8 @@ class Cart extends Component {
 
 const mapStateToProps = (state)=>{
 	return{
-		isLogged: state.loggedStore.isLogged,
+		isUserLoggedIn: state.loggedStore.isUserLoggedIn,
+        userLoggedIn: state.loggedStore.userLoggedIn,
 		food: state.foodStore.food,
 		loadingFood: state.foodStore.loadingFood,
 	}

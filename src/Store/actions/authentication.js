@@ -3,6 +3,17 @@ import authenticationAxios from '../../Instances/authentication/authenticationAx
 
 const API_KEY = "AIzaSyA5YYtCBR662zLJ7HWTBGcdvVGih3tyQi8";
 
+const saveSession = (userName, token, localId) => {
+    return {
+      type: actionTypes.SIGN_IN,
+      payload: {
+        userName: userName,
+        idToken: token,
+        localId: localId,
+      },
+    };
+};
+
 export const signUp = (authData, isMatch, onSuccessCallback)=>{
     return(dispatch)=>{
         if(isMatch){
@@ -26,6 +37,9 @@ export const signUp = (authData, isMatch, onSuccessCallback)=>{
                     case "MISSING_EMAIL":
                         dispatch({type: actionTypes.MISSING_EMAIL})
                         break;
+                    case "EMAIL_EXISTS":
+                        dispatch({type: actionTypes.EMAIL_EXISTS})
+                        break;
                     default:
                         console.log(error.response.data.error.message)
                 }
@@ -42,12 +56,52 @@ export const signIn = (authData, onSuccessCallback)=>{
         authenticationAxios
             .post("accounts:signInWithPassword?key=" + API_KEY, authData)
             .then((response)=>{
-                dispatch({type: actionTypes.SIGN_IN})
-                onSuccessCallback();
-                console.log(response)         
+                const userEmail = authData.email;
+                const token = response.data.idToken;
+                const localId = response.data.localId;
+                let userSession = {
+                    token,
+                    userEmail,
+                    localId,
+                };
+
+                userSession = JSON.stringify(userSession);
+
+                localStorage.setItem("userSession", userSession);
+
+                dispatch(saveSession(userEmail, token, localId));
+                onSuccessCallback();      
             })
             .catch((error)=>{
+                console.log(error)
                 dispatch({type: actionTypes.WRONG_CREDENTIALS})
             })
     }
 }
+
+export const persistAuthentication = () => {
+    return (dispatch) => {
+      let userSession = localStorage.getItem("userSession");
+  
+      if (!userSession) {
+        dispatch(logOut());
+      } else {
+        userSession = JSON.parse(userSession);
+  
+        dispatch(
+          saveSession(
+            userSession.userEmail,
+            userSession.token,
+            userSession.localId
+          )
+        );
+      }
+    };
+};
+
+export const logOut = () => {
+    localStorage.setItem("userSession", "");
+    return {
+        type: actionTypes.LOG_OUT,
+    };
+};

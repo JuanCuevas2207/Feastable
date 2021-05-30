@@ -1,8 +1,14 @@
 import { Component } from 'react';
 import Details from "../Components/recipeDetails/Details";
 import { withRouter } from 'react-router-dom';
+import {connect} from 'react-redux'
 
 class RecipeDetails extends Component{
+    componentDidUpdate(){
+        if(!this.props.isUserLoggedIn)
+            this.props.history.push("/")
+    }
+
     render(){
         return(
             <div> 
@@ -18,4 +24,10 @@ class RecipeDetails extends Component{
 
 }
 
-export default withRouter(RecipeDetails);
+const mapStateToProps = (state)=>{
+	return{
+		isUserLoggedIn: state.loggedStore.isUserLoggedIn,
+	}
+}
+
+export default connect(mapStateToProps, null)(withRouter(RecipeDetails));

@@ -12,6 +12,20 @@ import { connect } from 'react-redux'
 import Recipe from "../Components/recipes/Recipe"
 
 class Login extends Component{
+	state = {
+		userName: "",
+		password: "",
+	};
+
+	componentDidMount = () => {
+		this.props.onPersistAuthentication();
+	};
+
+	componentDidUpdate = () => {
+		/*if (this.props.isUserLoggedIn) {
+		  this.state.history.replace("/cart");
+		}*/
+	}
 
 	checkInfo = (userName, password)=>{
 		let userData = {
@@ -20,21 +34,20 @@ class Login extends Component{
 		}
 		this.props.onUserSignIn(userData, () => {
 			this.props.history.push("/cart");
-		  });
+		});
 	}
-
 
     render(){
 		return(
 			<Switch>
 				<Route path="/" exact render = {()=>(
 					<>
+						<button onClick={() => console.log(this.props.isUserLoggedIn)}></button>
+						<button onClick={() => console.log(this.props.userLoggedIn)}></button>
 						<BrandBar />
 						<LoginContainer checkInfo={this.checkInfo} errorMessage = {this.props.message}/>
 					</>
 				)}></Route>
-
-				<Route path = "/signUp" render= {()=><SignUp></SignUp>}></Route>
 
 				<Route path="/cart" exact render = {()=>(	
 					<Cart></Cart>
@@ -61,16 +74,19 @@ class Login extends Component{
 
 const mapStateToProps = (state)=>{
 	return{
-		isLogged: state.loggedStore.isLogged,
+		isUserLoggedIn: state.loggedStore.isUserLoggedIn,
+		userLoggedIn: state.loggedStore.userLoggedIn,
 		message: state.signInErrorStore.message,
 	}
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-      onUserSignIn: (authData, onSuccessCallback) =>
-        dispatch(actionCreators.signIn(authData, onSuccessCallback)),
+		onUserSignIn: (authData, onSuccessCallback) =>
+        	dispatch(actionCreators.signIn(authData, onSuccessCallback)),
+		onPersistAuthentication: () =>
+      		dispatch(actionCreators.persistAuthentication()),
     };
-  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Login));

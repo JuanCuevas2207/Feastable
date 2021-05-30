@@ -6,7 +6,6 @@ import { connect } from "react-redux"
 import * as actionCreators from '../Store/actions/authentication'
 
 class SignUp extends Component{
-
     render(){
 		return(
 			<div>
@@ -23,7 +22,6 @@ class SignUp extends Component{
 
 const mapStateToProps = (state)=>{
 	return{
-		isLogged: state.loggedStore.isLogged,
         message: state.signUpErrorStore.message,
 	}
 }
