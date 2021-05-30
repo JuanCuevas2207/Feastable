@@ -32,10 +32,10 @@ const RecipeDetails = (props) =>{
             </div>
             <div className={detailsStyle.container}>
                 <div className={detailsStyle.ingredientsCard}>
-                    <p className={detailsStyle.titles}>Ingredientes</p>
+                    <p className={detailsStyle.containerTitles}>Ingredientes</p>
                 </div>
                 <div className={detailsStyle.recipeCard}>
-                <p className={detailsStyle.titles}>Receta</p>
+                <p className={detailsStyle.containerTitles}>Receta</p>
                 </div>
                 
             </div>

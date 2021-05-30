@@ -1,7 +1,7 @@
 import React from "react";
-import spinnerStyles from "./Spinner.module.css";
+import spinnerStyles from "./MiniSpinner.module.css";
 
-const Spinner = () => {
+const MiniSpinner = () => {
   return (
     <div className={spinnerStyles.loader}>
       <div></div>
@@ -12,4 +12,4 @@ const Spinner = () => {
   );
 };
 
-export default Spinner;
+export default MiniSpinner;

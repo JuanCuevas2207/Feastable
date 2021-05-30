@@ -129,7 +129,6 @@ class Cart extends Component {
                     <Route path="/healthy" render={() => <Home />}></Route>
 
                     <Route path = "/details" exact render = {()=><RecipeDetails></RecipeDetails>}></Route>
-
                     <Route path = "/settings" render= {()=><Settings></Settings>}></Route>
                     <Route path = "/signUp" render= {()=><SignUp></SignUp>}></Route>
 

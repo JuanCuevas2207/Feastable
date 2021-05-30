@@ -9,7 +9,7 @@ import Page404 from "./Page404"
 import Settings from "./Settings"
 import * as actionCreators from '../Store/actions/authentication'
 import { connect } from 'react-redux'
-import Recipe from "../Components/recipes/Recipe"
+import RecipeDetails from "./RecipeDetails"
 
 class Login extends Component{
 	state = {
@@ -21,9 +21,9 @@ class Login extends Component{
 		this.props.onPersistAuthentication();
 	};
 
-	componentDidUpdate = () => {
-		/*if (this.props.isUserLoggedIn) {
-		  this.state.history.replace("/cart");
+	componentWillUpdate = () => {
+		/*if(this.props.isUserLoggedIn) {
+		  this.props.history.push("/cart");
 		}*/
 	}
 
@@ -42,17 +42,12 @@ class Login extends Component{
 			<Switch>
 				<Route path="/" exact render = {()=>(
 					<>
-						<button onClick={() => console.log(this.props.isUserLoggedIn)}></button>
-						<button onClick={() => console.log(this.props.userLoggedIn)}></button>
 						<BrandBar />
 						<LoginContainer checkInfo={this.checkInfo} errorMessage = {this.props.message}/>
 					</>
 				)}></Route>
 
-				<Route path="/cart" exact render = {()=>(	
-					<Cart></Cart>
-				)}></Route>
-
+				<Route path="/cart" exact render = {()=>(	<Cart></Cart>)}></Route>
 				<Route path = "/desayunos" render= {()=><Home/>}></Route>
 				<Route path = "/platos-fuertes" render= {()=><Home/>}></Route>
 				<Route path = "/ensaladas" render= {()=><Home/>}></Route>
@@ -60,11 +55,9 @@ class Login extends Component{
 				<Route path = "/snacks" render= {()=><Home/>}></Route>
 				<Route path = "/postres" render= {()=><Home/>}></Route>
 				<Route path = "/healthy" render= {()=><Home/>}></Route>
-
-				<Route path = "/recipie" render= {()=><Recipe></Recipe>}></Route>
-
 				<Route path = "/settings" render= {()=><Settings></Settings>}></Route>
 				<Route path = "/signUp" render= {()=><SignUp></SignUp>}></Route>
+				<Route path="/details" render = {()=>(<RecipeDetails></RecipeDetails>)}></Route>
 
 				<Route path = "*" render= {()=><Page404/>}></Route>
 			</Switch>
@@ -75,7 +68,6 @@ class Login extends Component{
 const mapStateToProps = (state)=>{
 	return{
 		isUserLoggedIn: state.loggedStore.isUserLoggedIn,
-		userLoggedIn: state.loggedStore.userLoggedIn,
 		message: state.signInErrorStore.message,
 	}
 }

@@ -14,16 +14,30 @@ const saveSession = (userName, token, localId) => {
     };
 };
 
+const startAuthLoading = () => {
+    return {
+      type: actionTypes.START_AUTH_LOADING,
+    };
+  };
+  
+  const endAuthLoading = () => {
+    return {
+      type: actionTypes.END_AUTH_LOADING,
+    };
+  };
+
 export const signUp = (authData, isMatch, onSuccessCallback)=>{
     return(dispatch)=>{
         if(isMatch){
+            dispatch(startAuthLoading())
             authenticationAxios
             .post("accounts:signUp?key=" + API_KEY, authData)
             .then((response)=>{
-                console.log(response)
+                dispatch(endAuthLoading())
                 onSuccessCallback();
             })
             .catch((error)=>{
+                dispatch(endAuthLoading())
                 switch(error.response.data.error.message){
                     case "INVALID_EMAIL":
                         dispatch({type: actionTypes.INVALID_EMAIL})
@@ -53,6 +67,7 @@ export const signUp = (authData, isMatch, onSuccessCallback)=>{
 
 export const signIn = (authData, onSuccessCallback)=>{
     return(dispatch)=>{
+        dispatch(startAuthLoading())
         authenticationAxios
             .post("accounts:signInWithPassword?key=" + API_KEY, authData)
             .then((response)=>{
@@ -70,11 +85,14 @@ export const signIn = (authData, onSuccessCallback)=>{
                 localStorage.setItem("userSession", userSession);
 
                 dispatch(saveSession(userEmail, token, localId));
+                dispatch(endAuthLoading())
                 onSuccessCallback();      
             })
             .catch((error)=>{
                 console.log(error)
+                dispatch(endAuthLoading())
                 dispatch({type: actionTypes.WRONG_CREDENTIALS})
+
             })
     }
 }

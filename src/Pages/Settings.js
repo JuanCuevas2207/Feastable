@@ -23,7 +23,6 @@ class Settings extends Component{
 				<Route path = "/settings" render= {()=>{
 					return(
 						<div> 
-							<button onClick={() => console.log(this.props.isUserLoggedIn)}></button>
 							<NavigationBar></NavigationBar>
 							<SettingsSideBar></SettingsSideBar>
 							<UserName></UserName>
@@ -44,7 +43,7 @@ class Settings extends Component{
 				<Route path = "/postres" render= {()=><Home></Home>}></Route>
 				<Route path = "/healthy" render= {()=><Home></Home>}></Route>
 
-				<Route path = "/details" exact render = {()=><RecipeDetails></RecipeDetails>}></Route>
+				<Route path = "/details" render = {()=><RecipeDetails></RecipeDetails>}></Route>
 
 				<Route path = "/signUp" render= {()=><SignUp></SignUp>}></Route>
 			</BrowserRouter>

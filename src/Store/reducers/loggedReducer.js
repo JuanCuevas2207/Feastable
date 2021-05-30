@@ -8,7 +8,8 @@ const inicialState = {
         userName: "",
         idToken: "",
         localId: "",
-    }
+    },
+    loadingAuth: false,
 }
 
 const login = (state, action) => {
@@ -44,6 +45,14 @@ const logOut = (state, action) => {
     });
 };
 
+const startLoading = (state, action) => {
+  return updateObject(state, { loadingAuth: true });
+};
+
+const endLoading = (state, action) => {
+  return updateObject(state, { loadingAuth: false });
+};
+
 const loggedReducer = (state=inicialState, action)=>{
     switch(action.type){
         case actionTypes.SIGN_IN:
@@ -52,6 +61,10 @@ const loggedReducer = (state=inicialState, action)=>{
             return signUp(state, action);
         case actionTypes.LOG_OUT:
             return logOut(state, action);
+        case actionTypes.START_AUTH_LOADING:
+            return startLoading(state, action);
+        case actionTypes.END_AUTH_LOADING:
+            return endLoading(state, action);
         default:
             return state;
     }

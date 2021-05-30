@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import fieldsStyle from './Fields.module.css'
+import {connect} from 'react-redux'
+import MiniSpinner from '../miniSpinner/MiniSpinner';
 
 const FillFields = (props) =>{
 
@@ -22,6 +24,15 @@ const FillFields = (props) =>{
     const inputPassword = form => {//permite que el usuario pueda escribir su contraseña
         setPassword(form.target.value)
     }
+
+    const renderSubmitButton = () => {
+        let content = <button type="button" className={fieldsStyle.buttons} onClick={() => onSend()}>INGRESAR</button>
+            
+        if (props.loadingAuth) {
+          content = <MiniSpinner></MiniSpinner>
+        }
+        return content;
+    };
 
     return(
             <form onSubmit={onSubmit} className={fieldsStyle.form} autoComplete={"off"}>
@@ -48,16 +59,18 @@ const FillFields = (props) =>{
                 name = "password"
                 className = {fieldsStyle.field}
                 onChange = {inputPassword}
-                />    
-
-                <input type="checkbox" className={fieldsStyle.checkBox}></input> 
-                <h6 className={fieldsStyle.checkBoxLabel}>Remember me</h6>
-      
+                />          
                 
-                <button type="button" className={fieldsStyle.buttons} onClick={() => onSend()}>INGRESAR</button>
+                {renderSubmitButton()}
                 <p className={fieldsStyle.wrongLogin}>{props.errorMessage}</p>
             </form>            
     );
 };
 
-export default withRouter(FillFields);
+const mapStateToProps = (state)=>{
+	return{
+        loadingAuth: state.loggedStore.loadingAuth
+	}
+}
+
+export default connect(mapStateToProps, null)(withRouter(FillFields));

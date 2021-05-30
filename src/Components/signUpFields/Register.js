@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import fieldsStyle from '../signUpFields/Register.module.css'
 import {withRouter} from 'react-router-dom'
+import MiniSpinner from '../miniSpinner/MiniSpinner';
+import {connect} from 'react-redux'
 
 const Register = (props) =>{
 
@@ -39,6 +41,15 @@ const Register = (props) =>{
             props.history.push('/')
         })
     }
+
+    const renderSubmitButton = () => {
+        let content = <button type="button" className={fieldsStyle.buttons} onClick={() => onSend()}>REGISTRAR</button>
+            
+        if (props.loadingAuth) {
+          content = <MiniSpinner></MiniSpinner>
+        }
+        return content;
+    };
     
     return(
         <form onSubmit={onSubmit} className={fieldsStyle.form} autoComplete={"off"}>
@@ -78,12 +89,18 @@ const Register = (props) =>{
             onChange = {inputPasswordConf}
             />  
             
-            <button type="button" className={fieldsStyle.buttons} onClick={() => onSend()}>REGISTRAR</button>
-
+            
+            {renderSubmitButton()}
             <p className={fieldsStyle.wrongForm}>{props.errorMessage}</p>
 
         </form>            
     );
 };
 
-export default withRouter(Register);
+const mapStateToProps = (state)=>{
+	return{
+        loadingAuth: state.loggedStore.loadingAuth
+	}
+}
+
+export default connect(mapStateToProps, null)(withRouter(Register));

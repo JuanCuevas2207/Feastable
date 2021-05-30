@@ -2,6 +2,9 @@
 export const SIGN_IN = "SIGN IN"
 export const LOG_OUT = "LOG OUT"
 export const SIGN_UP = "SIGN UP"
+export const START_AUTH_LOADING = "START_AUTH_LOADING"
+export const END_AUTH_LOADING = "END_AUTH_LOADING"
+
 
 //ERROR MANAGER
 export const INVALID_EMAIL = "INVALID_EMAIL"
