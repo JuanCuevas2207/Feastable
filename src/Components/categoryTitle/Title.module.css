@@ -32,6 +32,10 @@
   h1{
     font-size: 80px;
   }
+
+  .title{
+    font-size: 50px;
+  }
 }
 
 @media screen and (max-width: 720px){
@@ -45,5 +49,9 @@
 
   h1{
     font-size: 50px;
+  }
+
+  .title{
+    font-size: 90px,
   }
 }

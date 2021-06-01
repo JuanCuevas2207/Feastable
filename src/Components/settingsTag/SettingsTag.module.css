@@ -16,3 +16,21 @@
     height: 30px;
     padding: 20px;
 }
+
+@media screen and (max-width: 720px){
+
+    .container{
+        width: 95%;
+    }
+
+    .label{
+      font-size: 10px;
+    }
+
+    .input{
+        height: 10px;
+        padding: 10px;
+        font-size: 10px;
+        border-radius: 3px;
+    }
+}
