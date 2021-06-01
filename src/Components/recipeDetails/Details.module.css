@@ -76,3 +76,48 @@
     margin-left: 80px;
     margin-top: 0px;
 }
+
+@media screen and (max-width: 1300px){
+    .image{
+        width: 350px;
+    }
+    .title{
+        font-size: 60px;
+    }
+    .subTitles{
+        font-size: 14px;
+    }
+    .ingredientsCard {
+        width: 300px;
+    }
+    .recipeCard {
+        width: 750px;
+    }
+}
+
+@media screen and (max-width: 1120px){
+    .image{
+        width: 300px;
+    }
+    .recipeCard {
+        width: 550px;
+    }
+    .subTitles{
+        font-size: 11px;
+    }
+    .container{
+        margin-left: 30px;
+    }
+}
+
+@media screen and (max-width: 970px){
+    .image{
+        width: 20px;
+    }
+    .recipeCard {
+        width: 350px;
+    }
+    .title{
+        font-size: 40px;
+    }
+}

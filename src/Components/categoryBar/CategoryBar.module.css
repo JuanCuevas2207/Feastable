@@ -30,8 +30,6 @@ a:hover{
   font-weight: 700;
 }
 
-
-
 @media screen and (max-width: 720px){
   .categoryBar{
     font-size: 12px;

@@ -24,7 +24,7 @@ const RecipeDetails = (props) =>{
                             <p className={detailsStyle.subTitles}>Tiempo de preparacion</p>
                         </div>
                         <div className={detailsStyle.col}>
-                            <h6 className={detailsStyle.titles}><img src="assets/icons/bookmark.png" height="40px" alt="Clock"></img></h6>
+                            <h6 className={detailsStyle.titles}><img src="assets/icons/bookmark.png" height="40px" alt="Bookmark"></img></h6>
                             <p className={detailsStyle.subTitles}>Guardar receta</p>
                         </div>
                     </div>
@@ -35,7 +35,7 @@ const RecipeDetails = (props) =>{
                     <p className={detailsStyle.containerTitles}>Ingredientes</p>
                 </div>
                 <div className={detailsStyle.recipeCard}>
-                <p className={detailsStyle.containerTitles}>Receta</p>
+                    <p className={detailsStyle.containerTitles}>Receta</p>
                 </div>
                 
             </div>
